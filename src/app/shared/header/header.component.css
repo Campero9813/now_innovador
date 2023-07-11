@@ -1,0 +1,52 @@
+.rk-logo1 {
+    width: 40%;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    /* margin: -25px 0 0 -25px; */
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        display: none;
+        width: 10%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .rk-logo1 .logo-secundario {
+        /*         background-color: #f9e4b7; */
+        display: none;
+        position: relative;
+        width: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .logo-secundario {
+        width: 40%;
+        position: absolute;
+        top: 5%;
+        left: 30%;
+    }
+}
+
+.rk-search input {
+    color: white !important;
+    border-radius: 2px;
+}
+
+.rk-menu li {
+    width: 100%;
+    padding-bottom: 1px;
+}
+
+.active {
+    padding: 2px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.active a {
+    color: black;
+}

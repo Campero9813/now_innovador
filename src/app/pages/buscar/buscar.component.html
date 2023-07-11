@@ -1,0 +1,93 @@
+<!-- banners -->
+<div id="carouselExampleIndicators" class="carousel slide" style="margin-bottom: 1rem">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="./assets/img/banners/banner_home/1_banner_home.png " class="d-block w-80" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/img/banners/banner_home/2_banner_home_2.png" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+            <img src="./assets/img/banners/banner_home/3_banner_caja_life.png " class="d-block w-100" alt="..." />
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<!-- End banners -->
+
+<!-- <div style="padding-top: 100px;" *ngIf="!prodVideoService.cargando" class="animate animate_fadeInDownBig ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
+
+    <a *ngFor="let product of pruebas1.prodsFiltrados" [routerLink]="['/producto', product.id_producto]" class="rk-item ae-masonry__item">
+        <img src="./assets/productoslpnew/{{ product.imagen_portada}}" alt="" />
+        <div class="item-meta">
+            <h2>{{product.nombre_producto}}</h2>
+            <p>{{product.categoria}}</p>
+        </div>
+    </a>
+</div> -->
+
+<div class="card-group ">
+    <div *ngFor="let product of pruebas1.prodsFiltrados" class="card ">
+        <img [routerLink]="['/producto', product.id_producto]" class="card-img-top " src="./assets/productoslpnew/{{ product.imagen_portada}} " alt="... " />
+        <div class="card-body ">
+            <h5 class="card-title ">{{ product.nombre_producto }}</h5>
+            <p class="card-text ">{{ product.descripcion_corta }}</p>
+
+            <p class="card-text ">
+                <small class="text-muted ">Precio ${{ product.precio }}</small>
+            </p>
+            <p class="card-text ">
+                <small class="text-muted ">{{ product.categoria }}</small>
+            </p>
+            <a [routerLink]="[ '/producto', product.id_producto] " class="button-cards ">Ver más</a>
+            <button class="button-cards " (click)="agregarAlCarrito(product) ">Agregar a carrito</button>
+        </div>
+    </div>
+</div>
+
+<!-- Contenedor del carrito de compras -->
+<div *ngIf="carritoVisible" class="carrito-contenedor">
+
+    <h2>Carrito de compras </h2>
+    <table id="lista-carrito" class="u-full-width">
+        <thead>
+            <tr>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let carro of carrito; let i = index">
+            <tr>
+                <td><img style="width: 50px" class="card-img-top" src="./assets/productoslpnew/{{ carro.imagen_portada }}" alt="..." /></td>
+                <td>{{ carro.nombre_producto }}</td>
+                <td>{{ carro.precio | currency }}</td>
+                <td>{{ carro.cantidad }}</td>
+                <td><button class="botones_carrito" (click)="eliminarDelCarrito(i)">x</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="botones_carrito" (click)="vaciarCarrito()">Vaciar Carrito</button>
+    <button routerLink="checkout" class="botones_carrito" (click)="finalizarCompra()">Procesar Compra</button>
+    <button class="boton-cerrar" (click)="carritoVisible = false">Cerrar Carrito</button>
+
+</div>
+<!-- Botón flotante para ver el carrito -->
+<button class="boton-flotante" (click)="verCarrito()">
+    <i class="fas fa-shopping-cart">{{ carrito.length }}</i>
+</button>

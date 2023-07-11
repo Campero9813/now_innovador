@@ -1,0 +1,82 @@
+<header class="ae-container-fluid ae-container-fluid--full rk-header">
+    <div class="menu-container" [class.open]="menuVisible">
+        <input type="checkbox" id="mobile-menu" class="rk-mobile-menu" [(ngModel)]="menuVisible" />
+        <label for="mobile-menu">
+            <svg>
+                <use xlink:href="assets/img/symbols.svg#bar"></use>
+            </svg>
+            <svg>
+                <use xlink:href="assets/img/symbols.svg#bar"></use>
+            </svg>
+            <svg>
+                <use xlink:href="assets/img/symbols.svg#bar"></use>
+            </svg>
+        </label>
+
+        <div style="padding: 50px;" class="ae-container-fluid rk-topbar">
+            <div class="rk-logo1">
+                <a routerLink="home">
+                    <img routerLink="home" class="logo" src="assets/img/logo-lpblanco.png" alt="{{ infoPaginaService.info.titulo }}">
+                    <img routerLink="home" class="logo-secundario" src="assets/img/logo-secundario-WG.png" alt="{{ infoPaginaService.info.titulo }}">
+                    <!-- <img routerLink="home" class="logo-secundario" src="assets/img/logo-responsive.png" alt="{{ infoPaginaService.info.titulo }}"> -->
+                </a>
+                <!-- <img [routerLink]="['/producto', item1.id_producto]" class="logo-secundario" src="assets/img/logo-responsive.png" alt="{{ infoPaginaService.info.titulo }}"> -->
+                <!-- <a routerLink="home">{{ infoPaginaService.info.titulo }}</a> -->
+            </div>
+
+
+
+            <nav class="rk-navigation" [class.open]="menuVisible">
+                <ul class="rk-menu">
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="rk-menu__item">
+                        <a routerLink="inicio" class="btn btn-button rk-menu__link nav-link">Inicio</a>
+                    </li>
+                    <!-- <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="inicio" class="rk-menu__link nav-link">Tienda</a>
+                    </li> -->
+                    <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="hand-soap" class="rk-menu__link nav-link ">Hand Soap</a>
+                    </li>
+                    <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="body-wash" class="rk-menu__link nav-link ">Body Wash</a>
+                    </li>
+                    <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="body-mist" class="rk-menu__link nav-link ">Body Mist</a>
+                    </li>
+                    <!-- <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="listado-prueba" class="rk-menu__link nav-link ">Pruebas productos</a>
+                    </li>
+                    <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="ingresar-producto" class="rk-menu__link nav-link ">Ingresar producto</a>
+                    </li> -->
+
+                    <!-- <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="bolsa-trabajo" class="rk-menu__link nav-link ">Bolsa de Trabajo</a>
+                    </li>
+                    <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="listado-prueba" class="rk-menu__link nav-link  ">Listado de Productos</a>
+                    </li> 
+                    <li>
+                        <app-carrito-desp></app-carrito-desp>
+                    </li>-->
+                    <li>
+                        <div class="rk-search">
+                            <input type="text" (keyup.enter)="buscarProducto(txtBuscar.value)" placeholder="Buscar" id="urku-search" class="rk-search-field" #txtBuscar />
+                            <label for="urku-search">
+                                <svg>
+                                    <use xlink:href=".assets/img/symbols.svg#icon-search"></use>
+                                </svg>
+                            </label>
+                        </div>
+                    </li>
+                    <!-- <li id="cart" class="cart" data-totalitems="0">
+                        <a routerLink="nosotros" class="rk-menu__link nav-link"><i class="fas fa-shopping-cart"></i></a>
+                    </li> -->
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</header>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>

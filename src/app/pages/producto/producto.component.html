@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<section *ngIf="producto">
+    <!-- Loading -->
+    <div style="margin-top: 10em;" class="grid product" align="center" *ngIf="pruebaMysql.cargando">
+        <h2>Cargando...</h2>
+
+        <div class="loader loader--style1" title="0">
+            <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                <path
+                    opacity="0.2"
+                    fill="#000"
+                    d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
+                s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
+                c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"
+                />
+                <path
+                    fill="#000"
+                    d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
+                C22.32,8.481,24.301,9.057,26.013,10.047z"
+                >
+                    <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite" />
+                </path>
+            </svg>
+        </div>
+    </div>
+    <!-- End Loading -->
+
+    <main style="padding-top: 10rem;" *ngIf="!pruebaMysql.cargando">
+
+        <div class="container">
+            <div class="boton-regresar">
+                <a routerLink="inicio" class="btn button-cards">Regresar
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
+                      </svg>
+                </a>
+            </div>
+            <div class="grid product">
+
+                <!-- Aqui las imagenes -->
+                <div class="column-xs-12 column-md-8">
+                    <div class="product-gallery">
+                        <div class="product-image">
+                            <img class="active imagen" src="assets/productoslpnew/{{ producto.nombre_carpeta }}/{{producto.imagen_principal}}" (click)="mostrarImagen('assets/productoslpnew/{{producto.nombre_carpeta}}/{{producto.imagen_principal}}', 0)">
+                        </div>
+                        <ul class="image-list">
+                            <li class="image-item">
+                                <img class="imagen" src="assets/productoslpnew/{{ producto.nombre_carpeta }}/{{producto.imagen_1}}" (click)="mostrarImagen('assets/productoslpnew/{{producto.nombre_carpeta}}/{{producto.imagen_1}}', 1)">
+                            </li>
+                            <li class="image-item">
+                                <img class="imagen" src="assets/productoslpnew/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}" (click)="mostrarImagen('assets/productoslpnew/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}', 2)">
+                            </li>
+                            <li class="image-item">
+                                <img class="imagen" src="assets/productoslpnew/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}" (click)="mostrarImagen('assets/productoslpnew/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}', 3)">
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <!-- Aqui terminan las imagenes -->
+                <div class="column-xs-12 column-md-4">
+                    <h1 style="color: #007041; font-weight: bold;">{{producto.nombre_producto}}</h1>
+                    <!-- <h2  style="color: #007041;">{{producto.categoria}}</h2> -->
+                    <h2 style="color: #007041;">{{producto.precio | currency}}</h2>
+                    <div class="description">
+                        <p class="textJustify" style="color: #4a3f1b; font-weight: bold;">{{producto.descripcion}}</p>
+                    </div>
+                    <p class="textJustify" style="color: black; font-weight: bold;">Contenido: {{producto.presentacion}}</p>
+                    <button class="button-cards" (click)="agregarAlCarrito(producto)">Agregar a carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" [style.display]="modalVisible ? 'block' : 'none'">
+            <div class="modal-content">
+                <span class="close" (click)="cerrarModal()">&times;</span>
+                <img [src]="imageUrl" alt="Imagen" id="modal-image">
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Contenedor del carrito de compras -->
+    <div *ngIf="carritoVisible" class="carrito-contenedor">
+
+        <h2>Carrito de compras </h2>
+        <table id="lista-carrito" class="u-full-width">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let carro of carrito; let i = index">
+                <tr>
+                    <td><img style="width: 50px" class="card-img-top" src="./assets/productoslpnew/{{ carro.imagen_portada }}" alt="..." /></td>
+                    <td>{{ carro.nombre_producto }}</td>
+                    <td>{{ carro.precio | currency }}</td>
+                    <td>{{ carro.cantidad }}</td>
+                    <td><button class="botones_carrito" (click)="eliminarDelCarrito(i)">x</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <ul>
+            <li *ngFor="let carro of carrito; let i=index ">{{ carro.nombre_producto }}
+                <button (click)="eliminarDelCarrito(i) ">Eliminar</button>
+            </li>
+        </ul> -->
+        <button class="botones_carrito" (click)="vaciarCarrito()">Vaciar Carrito</button>
+        <button routerLink="checkout" class="botones_carrito" (click)="finalizarCompra()">Procesar Compra</button>
+        <button class="boton-cerrar" (click)="carritoVisible = false">Cerrar Carrito</button>
+
+    </div>
+    <!-- Botón flotante para ver el carrito -->
+    <button class="boton-flotante" (click)="verCarrito()">
+        <i class="fas fa-shopping-cart">{{ carrito.length }}</i>
+    </button>
+
+</section>
