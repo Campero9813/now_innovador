@@ -21,7 +21,7 @@
 
         <div class="card-group">
             <div *ngFor="let item of pruebas1.prueba.slice(3, 6)" class="card">
-                <img [routerLink]="['/producto', item.id_producto]" class="card-img-top" src="assets/productoslpnew/{{item.nombre_carpeta}}/{{ item.imagen_principal }}" alt="Card image cap">
+                <img [routerLink]="['/producto', item.id_producto]" class="card-img-top" src="assets/productos_now/{{item.nombre_carpeta}}/{{ item.imagen_principal }}" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{item.nombre_producto}}</h5>
                     <p class="card-text">{{item.descripcion_corta}}</p>
@@ -49,7 +49,7 @@
                 </thead>
                 <tbody *ngFor="let carro of carrito; let i = index">
                     <tr>
-                        <td><img style="width: 50px" class="card-img-top" src="./assets/productoslpnew/{{ carro.imagen_portada }}" alt="..." /></td>
+                        <td><img style="width: 50px" class="card-img-top" src="./assets/productos_now/{{ carro.imagen_portada }}" alt="..." /></td>
                         <td>{{ carro.nombre_producto }}</td>
                         <td>{{ carro.precio | currency }}</td>
                         <td>{{ carro.cantidad }}</td>

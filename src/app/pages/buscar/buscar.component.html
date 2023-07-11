@@ -30,7 +30,7 @@
 <!-- <div style="padding-top: 100px;" *ngIf="!prodVideoService.cargando" class="animate animate_fadeInDownBig ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
 
     <a *ngFor="let product of pruebas1.prodsFiltrados" [routerLink]="['/producto', product.id_producto]" class="rk-item ae-masonry__item">
-        <img src="./assets/productoslpnew/{{ product.imagen_portada}}" alt="" />
+        <img src="./assets/productos_now/{{ product.imagen_portada}}" alt="" />
         <div class="item-meta">
             <h2>{{product.nombre_producto}}</h2>
             <p>{{product.categoria}}</p>
@@ -40,7 +40,7 @@
 
 <div class="card-group ">
     <div *ngFor="let product of pruebas1.prodsFiltrados" class="card ">
-        <img [routerLink]="['/producto', product.id_producto]" class="card-img-top " src="./assets/productoslpnew/{{ product.imagen_portada}} " alt="... " />
+        <img [routerLink]="['/producto', product.id_producto]" class="card-img-top " src="./assets/productos_now/{{ product.imagen_portada}} " alt="... " />
         <div class="card-body ">
             <h5 class="card-title ">{{ product.nombre_producto }}</h5>
             <p class="card-text ">{{ product.descripcion_corta }}</p>
@@ -73,7 +73,7 @@
         </thead>
         <tbody *ngFor="let carro of carrito; let i = index">
             <tr>
-                <td><img style="width: 50px" class="card-img-top" src="./assets/productoslpnew/{{ carro.imagen_portada }}" alt="..." /></td>
+                <td><img style="width: 50px" class="card-img-top" src="./assets/productos_now/{{ carro.imagen_portada }}" alt="..." /></td>
                 <td>{{ carro.nombre_producto }}</td>
                 <td>{{ carro.precio | currency }}</td>
                 <td>{{ carro.cantidad }}</td>

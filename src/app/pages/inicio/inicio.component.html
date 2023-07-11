@@ -54,7 +54,7 @@
 
         <div style="padding-top: 4rem" class="card-group">
             <div *ngFor="let item1 of pruebas1.prueba.slice(0, 3)" class="card">
-                <img [routerLink]="['/producto', item1.id_producto]" class="card-img-top" src="./assets/productoslpnew/{{ item1.imagen_portada }} " alt="Card image cap " />
+                <img [routerLink]="['/producto', item1.id_producto]" class="card-img-top" src="./assets/productos_now/{{ item1.imagen_portada }} " alt="Card image cap " />
                 <div class="card-body">
                     <h5 class="card-title">{{ item1.nombre_producto }}</h5>
                     <p class="card-text">{{ item1.descripcion_corta }}</p>
@@ -92,7 +92,7 @@
 
         <div class="card-group">
             <div *ngFor="let item2 of pruebas1.prueba.slice(3, 6)" class="card">
-                <img [routerLink]="['/producto', item2.id_producto]" class="card-img-top" src="./assets/productoslpnew/{{ item2.imagen_portada }} " alt="Card image cap " />
+                <img [routerLink]="['/producto', item2.id_producto]" class="card-img-top" src="./assets/productos_now/{{ item2.imagen_portada }} " alt="Card image cap " />
                 <div class="card-body">
                     <h5 class="card-title">{{ item2.nombre_producto }}</h5>
                     <p class="card-text">{{ item2.descripcion_corta }}</p>
@@ -130,7 +130,7 @@
 
         <div class="card-group">
             <div *ngFor="let item3 of pruebas1.prueba.slice(6, 9)" class="card">
-                <img [routerLink]="['/producto', item3.id_producto]" class="card-img-top" src="./assets/productoslpnew/{{ item3.imagen_portada }} " alt="Card image cap " />
+                <img [routerLink]="['/producto', item3.id_producto]" class="card-img-top" src="./assets/productos_now/{{ item3.imagen_portada }} " alt="Card image cap " />
                 <div class="card-body">
                     <h5 class="card-title">{{ item3.nombre_producto }}</h5>
                     <p class="card-text">{{ item3.descripcion_corta }}</p>
@@ -187,7 +187,7 @@
 
         <div class="card-group">
             <div *ngFor="let item4 of pruebas1.prueba.slice(9, 12)" class="card">
-                <img [routerLink]="['/producto', item4.id_producto]" class="card-img-top" src="./assets/productoslpnew/{{ item4.imagen_portada }} " alt="Card image cap " />
+                <img [routerLink]="['/producto', item4.id_producto]" class="card-img-top" src="./assets/productos_now/{{ item4.imagen_portada }} " alt="Card image cap " />
                 <div class="card-body">
                     <h5 class="card-title">{{ item4.nombre_producto }}</h5>
                     <p class="card-text">{{ item4.descripcion_corta }}</p>
@@ -239,7 +239,7 @@
     <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio" style="margin-top: 4rem; margin-bottom: 4rem">
         <div class="card-group">
             <div *ngFor="let item5 of pruebas1.prueba.slice(12, 15)" class="card">
-                <img [routerLink]="['/producto', item5.id_producto]" class="card-img-top" src="./assets/productoslpnew/{{ item5.imagen_portada }} " alt="Card image cap " />
+                <img [routerLink]="['/producto', item5.id_producto]" class="card-img-top" src="./assets/productos_now/{{ item5.imagen_portada }} " alt="Card image cap " />
                 <div class="card-body">
                     <h5 class="card-title">{{ item5.nombre_producto }}</h5>
                     <p class="card-text">{{ item5.descripcion_corta }}</p>
@@ -292,7 +292,7 @@
     <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio" style="margin-top: 4rem; margin-bottom: 4rem">
         <div class="card-group">
             <div *ngFor="let item6 of pruebas1.prueba.slice(15, 18)" class="card">
-                <img [routerLink]="['/producto', item6.id_producto]" class="card-img-top" src="./assets/productoslpnew/{{ item6.imagen_portada }} " alt="Card image cap " />
+                <img [routerLink]="['/producto', item6.id_producto]" class="card-img-top" src="./assets/productos_now/{{ item6.imagen_portada }} " alt="Card image cap " />
                 <div class="card-body">
                     <h5 class="card-title">{{ item6.nombre_producto }}</h5>
                     <p class="card-text">{{ item6.descripcion_corta }}</p>
@@ -344,7 +344,7 @@
     <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio" style="margin-top: 4rem; margin-bottom: 4rem">
         <div class="card-group">
             <div *ngFor="let item7 of pruebas1.prueba.slice(18, 21)" class="card">
-                <img [routerLink]="['/producto', item7.id_producto]" class="card-img-top" src="./assets/productoslpnew/{{ item7.imagen_portada }} " alt="Card image cap " />
+                <img [routerLink]="['/producto', item7.id_producto]" class="card-img-top" src="./assets/productos_now/{{ item7.imagen_portada }} " alt="Card image cap " />
                 <div class="card-body">
                     <h5 class="card-title">{{ item7.nombre_producto }}</h5>
                     <p class="card-text">{{ item7.descripcion_corta }}</p>
@@ -384,7 +384,7 @@
             </thead>
             <tbody *ngFor="let carro of carrito; let i = index">
                 <tr>
-                    <td><img style="width: 50px" class="card-img-top" src="./assets/productoslpnew/{{ carro.imagen_portada }}" alt="..." /></td>
+                    <td><img style="width: 50px" class="card-img-top" src="./assets/productos_now/{{ carro.imagen_portada }}" alt="..." /></td>
                     <td>{{ carro.nombre_producto }}</td>
                     <td>{{ carro.precio | currency }}</td>
                     <!-- <td>{{ carro.cantidad }} </td> -->
