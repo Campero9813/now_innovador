@@ -1,15 +1,15 @@
 .rk-logo1 {
-    width: 40%;
+    width: 20%;
     position: absolute;
     top: 5%;
-    left: 30%;
+    left: 40%;
     /* margin: -25px 0 0 -25px; */
 }
 
 @media only screen and (max-width: 600px) {
     .logo {
         display: none;
-        width: 10%;
+        width: 50%;
     }
 }
 
@@ -18,15 +18,15 @@
         /*         background-color: #f9e4b7; */
         display: none;
         position: relative;
-        width: 20px !important;
+        width: 40px !important;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .logo-secundario {
-        width: 40%;
+        width: 50%;
         position: absolute;
-        top: 5%;
+        top: 35%;
         left: 30%;
     }
 }

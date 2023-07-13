@@ -88,11 +88,16 @@
 /* CARDS */
 
 .button-cards {
-    background-color: #705f28;
+    /* color del boton del card */
+    /* background-color: #0a169a; */
+    /* background-color: #6fb2e3; */
+    background-color: #0a169a;
     /* Green */
     border-radius: 3px;
     border: none;
-    color: white;
+    /* color: white; */
+    color: #000000;
+    font-weight: bold;
     padding: 5px 10px;
     margin: 2px;
     text-align: center;

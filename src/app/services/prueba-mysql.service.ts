@@ -7,7 +7,7 @@ import { pruebaMysql } from '../interfaces/prueba-mysql.interface';
   providedIn: 'root'
 })
 export class PruebaMysqlService {
-url='http://192.168.1.40/webservice_dev/lifeImagenes/getConsulta/';
+url='http://192.168.1.40//webservice_dev/NowImagenes/getConsulta/';
 url_produccion='http://innovador.com.mx:8085/webservice_dev/lifeImagenes/getConsulta/';
 
 url_prod='https://lifeproducts.mx/webservices/lifeproducts/ObtenerProductos/';
@@ -27,7 +27,7 @@ prodsFiltrados: pruebaMysql[] = [];
     //Cargamos todos los productos
     
           /* this.http.get<pruebaMysql[]>(`${this.url}}`) */
-          this.http.get<pruebaMysql[]>(this.url_prod, {responseType: "json"})
+          this.http.get<pruebaMysql[]>(this.url, {responseType: "json"})
           .subscribe( (resp: pruebaMysql[]) => {
             //console.log(resp);
             this.prueba = resp;
@@ -44,8 +44,8 @@ prodsFiltrados: pruebaMysql[] = [];
 
   getProdPrueba(id: String){
 
-    /* Esta es la ruta de dev ---> /  / return this.http.get(`http://192.168.1.40/webservice_dev/lifeImagenes/getConsulta/?id_producto=${ id }`);    */
-    /* Esta es la ruta de prod ---> */    return this.http.get(`https://lifeproducts.mx/webservices/lifeproducts/ObtenerProductos/?id_producto=${ id }`);   
+    /* Esta es la ruta de dev ---> */   return this.http.get(`http://192.168.1.40/webservice_dev/nowImagenes/getConsulta/?id_producto=${ id }`);  
+    /* Esta es la ruta de prod ---> */   /*  return this.http.get(`https://lifeproducts.mx/webservices/lifeproducts/ObtenerProductos/?id_producto=${ id }`);    */
     /* console.log("aqui viene el producto"); */
     setTimeout(() => {
       this.cargando=false;
