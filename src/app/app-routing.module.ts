@@ -9,11 +9,6 @@ import { PruebaEditarProdComponent } from './pages/prueba-editar-prod/prueba-edi
 import { BolsaTrabajoComponent } from './pages/bolsa-trabajo/bolsa-trabajo.component';
 import { SucursalesComponent } from './pages/sucursales/sucursales.component';
 import { ContactanosComponent } from './pages/contactanos/contactanos.component';
-/* Componentes Categorias */
-import { BodyWashComponent } from './categorias/body-wash/body-wash.component';
-import { BodyMistComponent } from './categorias/body-mist/body-mist.component';
-import { HandSoapComponent } from './categorias/hand-soap/hand-soap.component';
-
 /* Componentes CRUD */
 import { IngresarProductoComponent } from './pages/ingresar-producto/ingresar-producto.component';
 import { AdminInicioComponent } from './pages/admin-inicio/admin-inicio.component';
@@ -22,6 +17,12 @@ import { AdminInicioComponent } from './pages/admin-inicio/admin-inicio.componen
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { DirEnvioComponent } from './pages/dir-envio/dir-envio.component';
 import { ResumenComprasComponent } from './pages/resumen-compras/resumen-compras.component';
+/* Componentes Categorias */
+import { CuidadoRopaComponent } from './categorias/cuidado-ropa/cuidado-ropa.component';
+import { LimpiadoresEspecializadosComponent } from './categorias/limpiadores-especializados/limpiadores-especializados.component';
+import { LimpiadoresPisosComponent } from './categorias/limpiadores-pisos/limpiadores-pisos.component';
+import { LimpiadoresSuperficiesComponent } from './categorias/limpiadores-superficies/limpiadores-superficies.component';
+import { MirachemComponent } from './categorias/mirachem/mirachem.component';
 
 
 
@@ -36,9 +37,11 @@ const routes: Routes = [
     {path: 'resumen', component: ResumenComprasComponent},
 
     /* Rutas Categorias */
-    {path: 'body-wash', component: BodyWashComponent},
-    {path: 'body-mist', component: BodyMistComponent},
-    {path: 'hand-soap', component: HandSoapComponent},
+    {path: 'ropa', component: CuidadoRopaComponent},
+    {path: 'limpiadores-especializados', component: LimpiadoresEspecializadosComponent},
+    {path: 'pisos', component: LimpiadoresPisosComponent},
+    {path: 'superficies', component: LimpiadoresSuperficiesComponent},
+    {path: 'mirachem', component: MirachemComponent},
 
     {path: 'bolsa-trabajo', component: BolsaTrabajoComponent},
 

@@ -21,9 +21,6 @@ import { CarritoDespComponent } from './buttons/carrito-desp/carrito-desp.compon
 import { BolsaTrabajoComponent } from './pages/bolsa-trabajo/bolsa-trabajo.component';
 import { SucursalesComponent } from './pages/sucursales/sucursales.component';
 import { ContactanosComponent } from './pages/contactanos/contactanos.component';
-import { BodyMistComponent } from './categorias/body-mist/body-mist.component';
-import { BodyWashComponent } from './categorias/body-wash/body-wash.component';
-import { HandSoapComponent } from './categorias/hand-soap/hand-soap.component';
 import { GuardarProductoComponent } from './buttons/guardar-producto/guardar-producto.component';
 import { IngresarProductoComponent } from './pages/ingresar-producto/ingresar-producto.component';
 import { AdminInicioComponent } from './pages/admin-inicio/admin-inicio.component';
@@ -34,6 +31,11 @@ import { HeaderNewComponent } from './shared/header-new/header-new.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { DirEnvioComponent } from './pages/dir-envio/dir-envio.component';
 import { ResumenComprasComponent } from './pages/resumen-compras/resumen-compras.component';
+import { CuidadoRopaComponent } from './categorias/cuidado-ropa/cuidado-ropa.component';
+import { LimpiadoresPisosComponent } from './categorias/limpiadores-pisos/limpiadores-pisos.component';
+import { LimpiadoresSuperficiesComponent } from './categorias/limpiadores-superficies/limpiadores-superficies.component';
+import { LimpiadoresEspecializadosComponent } from './categorias/limpiadores-especializados/limpiadores-especializados.component';
+import { MirachemComponent } from './categorias/mirachem/mirachem.component';
 
 @NgModule({
     declarations: [
@@ -51,9 +53,6 @@ import { ResumenComprasComponent } from './pages/resumen-compras/resumen-compras
         BolsaTrabajoComponent, 
         SucursalesComponent, 
         ContactanosComponent, 
-        BodyMistComponent, 
-        BodyWashComponent, 
-        HandSoapComponent, 
         GuardarProductoComponent, 
         IngresarProductoComponent,
         AdminInicioComponent,
@@ -62,7 +61,13 @@ import { ResumenComprasComponent } from './pages/resumen-compras/resumen-compras
         HeaderNewComponent,
         CheckoutComponent,
         DirEnvioComponent,
-        ResumenComprasComponent],
+        ResumenComprasComponent,
+        CuidadoRopaComponent,
+        LimpiadoresPisosComponent,
+        LimpiadoresSuperficiesComponent,
+        LimpiadoresEspecializadosComponent,
+        MirachemComponent
+    ],
     imports: [
         BrowserModule, 
         AppRoutingModule, 

@@ -1,6 +1,6 @@
 <header class="ae-container-fluid ae-container-fluid--full rk-header">
     <div class="menu-container" [class.open]="menuVisible">
-        <input type="checkbox" id="mobile-menu" class="rk-mobile-menu" [(ngModel)]="menuVisible" />
+        <input type="checkbox" id="mobile-menu" class="rk-mobile-menu" [(ngModel)]="menuVisible"/>
         <label for="mobile-menu">
             <svg>
                 <use xlink:href="assets/img/symbols.svg#bar"></use>
@@ -35,13 +35,19 @@
                         <a routerLink="inicio" class="rk-menu__link nav-link">Tienda</a>z
                     </li> -->
                     <li routerLinkActive="active" class="rk-menu__item nav-item">
-                        <a routerLink="hand-soap" class="rk-menu__link nav-link ">Hand Soap</a>
+                        <a routerLink="hand-soap" class="rk-menu__link nav-link ">Cuidado Ropa</a>
                     </li>
                     <li routerLinkActive="active" class="rk-menu__item nav-item">
-                        <a routerLink="body-wash" class="rk-menu__link nav-link ">Body Wash</a>
+                        <a routerLink="body-wash" class="rk-menu__link nav-link ">Limpiadores Especializados</a>
                     </li>
                     <li routerLinkActive="active" class="rk-menu__item nav-item">
-                        <a routerLink="body-mist" class="rk-menu__link nav-link ">Body Mist</a>
+                        <a routerLink="body-mist" class="rk-menu__link nav-link ">Limpiadores Pisos</a>
+                    </li>
+                    <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="body-wash" class="rk-menu__link nav-link ">Limpiadores Superficies</a>
+                    </li>
+                    <li routerLinkActive="active" class="rk-menu__item nav-item">
+                        <a routerLink="body-mist" class="rk-menu__link nav-link ">Mirachem</a>
                     </li>
                     <!-- <li routerLinkActive="active" class="rk-menu__item nav-item">
                         <a routerLink="listado-prueba" class="rk-menu__link nav-link ">Pruebas productos</a>
