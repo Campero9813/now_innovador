@@ -1,3 +1,16 @@
+/* Estilos por defecto del menú */
+#mainNav {
+  background-color: #109FDF; /* Color de fondo sólido */
+
+  transition: background-color 0.1s ease-in-out;
+}
+
+#mainNav.scrolled {
+  background-color: rgba(16, 159, 223, 0.7); /* Color de fondo semitransparente */
+}
+
+
+
 .rk-logo1 {
   width: 20%;
   position: absolute;
@@ -50,3 +63,10 @@
 .active a {
   color: black;
 }
+
+.search-input{
+  height: 100%;
+  width: 100%;
+}
+
+

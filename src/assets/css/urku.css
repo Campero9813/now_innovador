@@ -1,9 +1,9 @@
-/* * * * * * * * * * * * * * * * * * * * *\ 
- UrkuPortfolio v1.0.0 
- Urku is a prtfolio template with a very clean style. 
- (c) 2016 Lionel <lionel@pixeden.com> (http://pixeden.com) 
- https://bitbucket.org/elrumordelaluz/urkuportfolio 
- Licensed under  MIT 
+/* * * * * * * * * * * * * * * * * * * * *\
+ UrkuPortfolio v1.0.0
+ Urku is a prtfolio template with a very clean style.
+ (c) 2016 Lionel <lionel@pixeden.com> (http://pixeden.com)
+ https://bitbucket.org/elrumordelaluz/urkuportfolio
+ Licensed under  MIT
 \* * * * * * * * * * * * * * * * * * * * */
 
 @charset "UTF-8";
@@ -76,14 +76,10 @@ body {
 
 .rk-header {
     /* background-color: linear-gradient(#007041, white); */
-    /* background: rgb(41, 118, 175); */
-    background: #0a169a;
-    height: 15%;
+    height: 10%;
     position: relative;
     z-index: 5;
-    padding: 10px 20%;
-    padding-bottom: 10%;
-    justify-content: center;
+    padding: 5px 15%;
 }
 
 .top-fixed .rk-header {
@@ -202,9 +198,9 @@ body {
     -webkit-align-self: flex-start;
     -ms-flex-item-align: start;
     align-self: flex-start;
-    margin-bottom: 3.4rem;
-    margin-left: 7.7rem;
-    padding-top: .16rem;
+    margin-bottom: 2rem;
+    margin-left: 6.7rem;
+    padding-top: .18rem;
     position: relative;
 }
 
@@ -241,11 +237,11 @@ body {
     /* opacity: 0;
     outline: 0;
     padding: 0; */
-    padding-bottom: .3em;
+    padding-bottom: 1.3em;
     -webkit-transition: .3s;
     transition: .3s;
     z-index: 10;
-    width: 3px;
+    width: 100%;
 }
 
 .rk-search input:focus {
@@ -2398,7 +2394,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
     #mobile-menu:checked~.rk-topbar .rk-search-field {
         color: white;
         opacity: 50;
-        padding: 1rem;
+        padding: 2rem;
         text-align: center;
         width: 100%;
     }

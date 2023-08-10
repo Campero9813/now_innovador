@@ -2,15 +2,22 @@ import { Component, ElementRef, HostListener } from '@angular/core';
 import { InfoPaginaService } from '../../services/info-pagina.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-header-new',
   templateUrl: './header-new.component.html',
   styleUrls: ['./header-new.component.css']
 })
 export class HeaderNewComponent {
+  isTransparent = false;
+  isSolid = false;
+  isScrolled = false;
+
   constructor(public InfoPaginaService: InfoPaginaService,
     private router:Router,
     private elementRef: ElementRef ) {}
+
+
 
     buscarProducto( termino: string){
     console.log(termino);
@@ -24,6 +31,11 @@ export class HeaderNewComponent {
 
     toggleMenu() {
       this.menuVisible = !this.menuVisible;
+    }
+
+    @HostListener('window:scroll', [])
+    onWindowScroll() {
+        this.isScrolled = (window.scrollY > 0);
     }
 
     @HostListener('document:click', ['$event'])

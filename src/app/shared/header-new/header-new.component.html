@@ -1,43 +1,41 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img routerLink="home" alt="Logo" width="100" height="140" class="d-inline-block align-text-top" src="assets/img/logo-now-blanco.png" alt="{{ InfoPaginaService.info.titulo }}">
-    </a>
-  </div>
+<nav class="navbar navbar-expand-lg fixed-top" [ngClass]="{'scrolled': isScrolled}" id="mainNav">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#"><img routerLink="home" alt="Logo" width="100" height="140" class="d-inline-block align-text-top" src="assets/img/logo-now-blanco.png" alt="{{ InfoPaginaService.info.titulo }}"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding-left: 50%;">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="inicio" class="nav-link">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Tienda</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Categorias
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li routerLinkActive="active"><a routerLink="ropa" class="dropdown-item">Cuidado Ropa</a></li>
+            <li routerLinkActive="active"><a routerLink="limpiadores-especializados" class="dropdown-item">Limpiadores Especializados</a></li>
+            <li routerLinkActive="active"><a routerLink="pisos" class="dropdown-item">Limpiadores Pisos</a></li>
+            <li routerLinkActive="active"><a routerLink="superficies" class="dropdown-item">Limpiadores Superficies</a></li>
+            <li routerLinkActive="active"><a routerLink="mirachem" class="dropdown-item">Mirachem</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
+
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="container-fluid rk-search">
+        <input class="search-input rk-search-field" type="text" (keyup.enter)="buscarProducto(txtBuscar.value)" placeholder="Buscar" id="urku-search" #txtBuscar aria-label="Search">
+        <label for="urku-search">
+          <svg>
+            <use xlink:href=".assets/img/symbols.svg#icon-search"></use>
+          </svg>
+        </label>
+        <!-- <button class="btn btn-bs-light-border-subtle" type="submit">Buscar</button> -->
+
+      </div>
     </div>
   </div>
 </nav>
