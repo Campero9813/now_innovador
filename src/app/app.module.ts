@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
@@ -36,24 +37,25 @@ import { LimpiadoresPisosComponent } from './categorias/limpiadores-pisos/limpia
 import { LimpiadoresSuperficiesComponent } from './categorias/limpiadores-superficies/limpiadores-superficies.component';
 import { LimpiadoresEspecializadosComponent } from './categorias/limpiadores-especializados/limpiadores-especializados.component';
 import { MirachemComponent } from './categorias/mirachem/mirachem.component';
+import { SubMenuComponent } from './shared/sub-menu/sub-menu.component';
 
 @NgModule({
     declarations: [
-        AppComponent, 
-        HeaderComponent, 
-        FooterComponent, 
-        InicioComponent, 
-        NosotrosComponent, 
-        ProductoComponent, 
-        BuscarComponent, 
-        AgregarCarritoComponent, 
-        PruebaListarMysqlComponent, 
-        PruebaEditarProdComponent, 
-        CarritoDespComponent, 
-        BolsaTrabajoComponent, 
-        SucursalesComponent, 
-        ContactanosComponent, 
-        GuardarProductoComponent, 
+        AppComponent,
+        HeaderComponent,
+        FooterComponent,
+        InicioComponent,
+        NosotrosComponent,
+        ProductoComponent,
+        BuscarComponent,
+        AgregarCarritoComponent,
+        PruebaListarMysqlComponent,
+        PruebaEditarProdComponent,
+        CarritoDespComponent,
+        BolsaTrabajoComponent,
+        SucursalesComponent,
+        ContactanosComponent,
+        GuardarProductoComponent,
         IngresarProductoComponent,
         AdminInicioComponent,
         AdminComponent,
@@ -66,11 +68,13 @@ import { MirachemComponent } from './categorias/mirachem/mirachem.component';
         LimpiadoresPisosComponent,
         LimpiadoresSuperficiesComponent,
         LimpiadoresEspecializadosComponent,
-        MirachemComponent
+        MirachemComponent,
+        SubMenuComponent
     ],
     imports: [
-        BrowserModule, 
-        AppRoutingModule, 
+        CommonModule,
+        BrowserModule,
+        AppRoutingModule,
         HttpClientModule,
         FormsModule,
         ReactiveFormsModule
