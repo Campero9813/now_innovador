@@ -38,6 +38,9 @@ import { LimpiadoresSuperficiesComponent } from './categorias/limpiadores-superf
 import { LimpiadoresEspecializadosComponent } from './categorias/limpiadores-especializados/limpiadores-especializados.component';
 import { MirachemComponent } from './categorias/mirachem/mirachem.component';
 import { SubMenuComponent } from './shared/sub-menu/sub-menu.component';
+import { WhatsappComponent } from './buttons/whatsapp/whatsapp.component';
+import { ChatbotComponent } from './buttons/chatbot/chatbot.component';
+import { ChatbotButtonComponent } from './buttons/chatbot-button/chatbot-button.component';
 
 @NgModule({
     declarations: [
@@ -69,7 +72,10 @@ import { SubMenuComponent } from './shared/sub-menu/sub-menu.component';
         LimpiadoresSuperficiesComponent,
         LimpiadoresEspecializadosComponent,
         MirachemComponent,
-        SubMenuComponent
+        SubMenuComponent,
+        WhatsappComponent,
+        ChatbotComponent,
+        ChatbotButtonComponent
     ],
     imports: [
         CommonModule,

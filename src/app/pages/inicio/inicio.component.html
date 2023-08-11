@@ -318,49 +318,7 @@
 
 
 
-
-
-
-
-
-  <!-- Contenedor del carrito de compras -->
-  <div *ngIf="carritoVisible" class="carrito-contenedor">
-
-    <h2>Carrito de compras </h2>
-    <table id="lista-carrito" class="u-full-width">
-      <thead>
-        <tr>
-          <th>Imagen</th>
-          <th>Nombre</th>
-          <th>Precio</th>
-          <th>Cantidad</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let carro of carrito; let i = index">
-        <tr>
-          <td><img style="width: 50px" class="card-img-top" src="./assets/productos_now/{{ carro.imagen_portada }}" alt="..." /></td>
-          <td>{{ carro.nombre_producto }}</td>
-          <td>{{ carro.precio }}</td>
-          <!-- <td>{{ carro.cantidad }} </td> -->
-          <td><button (click)="decrementarCantidad(carro)">-</button> {{ carro.cantidad }} <button (click)="incrementarCantidad(carro)">+</button></td>
-          <td><button class="botones_carrito" (click)="eliminarDelCarrito(i)">x</button></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <button class="botones_carrito" (click)="vaciarCarrito()">Vaciar Carrito</button>
-    <button routerLink="checkout" class="botones_carrito" (click)="finalizarCompra()">Procesar Compra</button>
-    <button class="boton-cerrar" (click)="carritoVisible = false">Cerrar Carrito</button>
-
-  </div>
-  <!-- Botón flotante para ver el carrito -->
-  <button class="boton-flotante" (click)="verCarrito()">
-    <i class="fas fa-shopping-cart">{{ carrito.length }}</i>
-  </button>
-
-
-
+  <app-chatbot-button></app-chatbot-button>
 
 
 </section>
