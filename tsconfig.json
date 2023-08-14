@@ -8,7 +8,10 @@
     "strict": true,
     //Quitar modo estricto de inicializar variables
     "strictPropertyInitialization": false,
-    //End //Quitar modo estricto de inicializar variables
+    //End Quitar modo estricto de inicializar variables
+    // Importar modulos de manera natural
+    "esModuleInterop": true,
+    // End Importar modulos de manera natural
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

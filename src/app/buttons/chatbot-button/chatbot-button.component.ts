@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ChatbotButtonComponent {
 
-  showChatbot: boolean = false;
+  chatbotVisible = false;
 
   toggleChatbot() {
-    this.showChatbot = !this.showChatbot;
+    this.chatbotVisible = !this.chatbotVisible;
   }
 }
