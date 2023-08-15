@@ -16,35 +16,35 @@ cargando = true;
 prueba: pruebaMysql[]= [];
 prodsFiltrados: pruebaMysql[] = [];
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.cargarProductos();
-    
+
     console.log("Ya se cargaron los productos");
   }
    cargarProductos(){
 
     return new Promise( (resolve, reject) => {
     //Cargamos todos los productos
-    
+
           /* this.http.get<pruebaMysql[]>(`${this.url}}`) */
           this.http.get<pruebaMysql[]>(this.url, {responseType: "json"})
           .subscribe( (resp: pruebaMysql[]) => {
-            //console.log(resp);
+            console.log(resp);
             this.prueba = resp;
-            /* console.log(this.prueba); */
+            console.log(this.prueba);
             setTimeout(() => {
               this.cargando = false;
             }, 5000);
           });
-          
-      });  
-      
-      
+
+      });
+
+
   }
 
   getProdPrueba(id: String){
 
-    /* Esta es la ruta de dev ---> */   return this.http.get(`http://192.168.1.40/webservice_dev/nowImagenes/getConsulta/?id_producto=${ id }`);  
+    /* Esta es la ruta de dev ---> */   return this.http.get(`http://192.168.1.40/webservice_dev/nowImagenes/getConsulta/?id_producto=${ id }`);
     /* Esta es la ruta de prod ---> */   /*  return this.http.get(`https://lifeproducts.mx/webservices/lifeproducts/ObtenerProductos/?id_producto=${ id }`);    */
     /* console.log("aqui viene el producto"); */
     setTimeout(() => {

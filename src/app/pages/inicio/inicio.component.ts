@@ -42,7 +42,7 @@ export class InicioComponent implements AfterViewInit{
   carrito: pruebaMysql[] = [];
   carritoVisible = false;
 
-  
+
   limite: number = 73;
   txtAcortado: string = '';
   txtCompleto: string = '';
@@ -52,7 +52,7 @@ export class InicioComponent implements AfterViewInit{
     setTimeout(() => {
       this.acortarTexto();
     }, 1500);
-    
+
   }
   acortarTexto(): void {
     /* console.log("pruebas");
@@ -66,13 +66,13 @@ export class InicioComponent implements AfterViewInit{
 
   constructor(
     private router:Router,
-    public productoService: ProductosService, 
+    public productoService: ProductosService,
     public prodService: ProdVideoService,
-    public pruebas1: PruebaMysqlService,
+    public prodsNow: PruebaMysqlService,
     private carritoService: CartService,
-    private renderer: Renderer2, 
+    private renderer: Renderer2,
     private el: ElementRef){
-      
+
       this.carrito = this.carritoService.obtenerProductos();
 
     }
@@ -177,7 +177,7 @@ ngOnInit() {
         this.carritoService.eliminarProducto(index);
         this.carrito = this.carritoService.obtenerProductos();
       }
-    
+
       vaciarCarrito(): void {
         this.carritoService.vaciarCarrito();
         this.carrito = this.carritoService.obtenerProductos();
@@ -202,7 +202,7 @@ ngOnInit() {
           productoExistente.cantidad!++;
         }
       }
-      
+
       decrementarCantidad(producto: pruebaMysql): void {
         const productoExistente = this.carrito.find(p => p.id_producto === producto.id_producto);
         if (productoExistente) {
@@ -216,7 +216,7 @@ ngOnInit() {
     }
 
 
-      
+
 
 
 

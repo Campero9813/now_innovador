@@ -7,74 +7,26 @@ import * as BotUI from 'botui'; // Importa BotUI como un módulo
   styleUrls: ['./chatbot.component.css']
 })
 export class ChatbotComponent {
+  title = "my first app";
+  ngOnInit() {
 
-  constructor(private elementRef: ElementRef) { }
+    //----------- chatbot's code --------------//
+    (function (d, m) {
+      var kommunicateSettings = {
+        appId: "ba78756f48f81b00b2b61c25f0607189",
+        popupWidget: true,
+        automaticChatOpenOnNavigation: true,
+      };
+      var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+      var h = document.getElementsByTagName("head")[0];
+      h.appendChild(s);
+      (window as any).kommunicate = m;
+      m._globals = kommunicateSettings;
+    })(document, (window as any).kommunicate || {});
+    //----------- chatbot's code end --------------//
 
-  ngOnInit(): void {
-    this.initializeChatbot();
   }
-
-  private initializeChatbot(): void {
-
-  const  botui = BotUI['default']({
-    container: '#botui-app'
-  }) // id of container
-
-
-  botui.message.add({
-    content: '¡Hola! Soy el chatbot de tu empresa. ¿En qué puedo ayudarte hoy?'
-  });
-
-  return botui.action.set(
-    {
-      options:[
-        { label: 'Información de la empresa', value: 'info' },
-        { label: 'Productos y servicios', value: 'productos' },
-        { label: 'Contacto', value: 'contacto' }
-      ],
-    },
-    { actionType: 'select'}
-  ).then((res: { value: string; }) => {
-    if (res.value === 'info') {
-      botui.message.add({
-        content: 'Somos una empresa dedicada a...'
-      });
-    } else if (res.value === 'productos') {
-      botui.message.add({
-        content: 'Ofrecemos una variedad de productos y servicios...'
-      });
-    } else if (res.value === 'contacto') {
-      botui.message.add({
-        content: 'Puedes contactarnos en...'
-      });
-    }
-  });
-}
-
-
-    /* const botui = BotUI.createBot(); */
-
-
-    /* botui.action.buttons({
-      action: [
-        { text: 'Información de la empresa', value: 'info' },
-        { text: 'Productos y servicios', value: 'productos' },
-        { text: 'Contacto', value: 'contacto' }
-      ]
-    }).then((res: { value: string; }) => {
-      if (res.value === 'info') {
-        botui.message.add({
-          content: 'Somos una empresa dedicada a...'
-        });
-      } else if (res.value === 'productos') {
-        botui.message.add({
-          content: 'Ofrecemos una variedad de productos y servicios...'
-        });
-      } else if (res.value === 'contacto') {
-        botui.message.add({
-          content: 'Puedes contactarnos en...'
-        });
-      }
-    });
-  */
 }

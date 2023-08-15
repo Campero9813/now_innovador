@@ -20,18 +20,19 @@
     </div>
     <!-- End Loading -->
 
-
     <section style="padding-top: 12rem;" class="section-gallery">
       <!-- original con imagenes bien -->
       <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a href="portfolio-item.html" class="rk-item ae-masonry__item">
-          <img src="./assets/img/pruebas/project-1-1.jpg" alt="">
+        <a *ngFor="let item of prodsNow.prueba" href="portfolio-item.html" class="rk-item ae-masonry__item">
+          <img src="./assets/productos_now/{{item.imagen_portada}}" alt="">
           <div class="item-meta">
-            <h2>Essential Stationery</h2>
-            <p>Branding</p>
+            <h2>{{ item.nombre_producto }}</h2>
+            <h3>{{ item.presentacion }}</h3>
+            <p>{{ item.categoria }}</p>
           </div>
         </a>
-        <a href="portfolio-item.html" class="rk-item ae-masonry__item">
+      </div>
+      <!-- <a href="portfolio-item.html" class="rk-item ae-masonry__item">
           <img src="./assets/img/pruebas/project-2-2.jpg" alt="">
           <div class="item-meta">
             <h2>Pickled Tousled</h2>
@@ -116,7 +117,7 @@
           </div>
         </a>
       </div>
-
+ -->
       <!-- Hecho por mi -->
       <!-- <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
         <a href="portfolio-item.html" class="rk-item ae-masonry__item">
@@ -316,9 +317,7 @@
   </div>
   <!-- End Banner body wash -->
 
-
-
-  <app-chatbot-button></app-chatbot-button>
+  <app-chatbot></app-chatbot>
 
 
 </section>
