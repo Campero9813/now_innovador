@@ -32,15 +32,16 @@ import { HeaderNewComponent } from './shared/header-new/header-new.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { DirEnvioComponent } from './pages/dir-envio/dir-envio.component';
 import { ResumenComprasComponent } from './pages/resumen-compras/resumen-compras.component';
-import { CuidadoRopaComponent } from './categorias/cuidado-ropa/cuidado-ropa.component';
-import { LimpiadoresPisosComponent } from './categorias/limpiadores-pisos/limpiadores-pisos.component';
-import { LimpiadoresSuperficiesComponent } from './categorias/limpiadores-superficies/limpiadores-superficies.component';
-import { LimpiadoresEspecializadosComponent } from './categorias/limpiadores-especializados/limpiadores-especializados.component';
-import { MirachemComponent } from './categorias/mirachem/mirachem.component';
 import { SubMenuComponent } from './shared/sub-menu/sub-menu.component';
 import { WhatsappComponent } from './buttons/whatsapp/whatsapp.component';
 import { ChatbotComponent } from './buttons/chatbot/chatbot.component';
 import { ChatbotButtonComponent } from './buttons/chatbot-button/chatbot-button.component';
+import { RopaComponent } from './categorias/ropa/ropa.component';
+import { PisosComponent } from './categorias/pisos/pisos.component';
+import { BaniosComponent } from './categorias/banios/banios.component';
+import { CocinaComponent } from './categorias/cocina/cocina.component';
+import { VidriosYSuperficiesComponent } from './categorias/vidrios-y-superficies/vidrios-y-superficies.component';
+import { AlfombrasComponent } from './categorias/alfombras/alfombras.component';
 
 @NgModule({
     declarations: [
@@ -67,15 +68,16 @@ import { ChatbotButtonComponent } from './buttons/chatbot-button/chatbot-button.
         CheckoutComponent,
         DirEnvioComponent,
         ResumenComprasComponent,
-        CuidadoRopaComponent,
-        LimpiadoresPisosComponent,
-        LimpiadoresSuperficiesComponent,
-        LimpiadoresEspecializadosComponent,
-        MirachemComponent,
         SubMenuComponent,
         WhatsappComponent,
         ChatbotComponent,
-        ChatbotButtonComponent
+        ChatbotButtonComponent,
+        RopaComponent,
+        PisosComponent,
+        BaniosComponent,
+        CocinaComponent,
+        VidriosYSuperficiesComponent,
+        AlfombrasComponent
     ],
     imports: [
         CommonModule,

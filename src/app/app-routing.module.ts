@@ -17,13 +17,14 @@ import { AdminInicioComponent } from './pages/admin-inicio/admin-inicio.componen
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { DirEnvioComponent } from './pages/dir-envio/dir-envio.component';
 import { ResumenComprasComponent } from './pages/resumen-compras/resumen-compras.component';
-/* Componentes Categorias */
-import { CuidadoRopaComponent } from './categorias/cuidado-ropa/cuidado-ropa.component';
-import { LimpiadoresEspecializadosComponent } from './categorias/limpiadores-especializados/limpiadores-especializados.component';
-import { LimpiadoresPisosComponent } from './categorias/limpiadores-pisos/limpiadores-pisos.component';
-import { LimpiadoresSuperficiesComponent } from './categorias/limpiadores-superficies/limpiadores-superficies.component';
-import { MirachemComponent } from './categorias/mirachem/mirachem.component';
 
+/* Componentes Categorias */
+import { RopaComponent } from './categorias/ropa/ropa.component';
+import { PisosComponent } from './categorias/pisos/pisos.component';
+import { BaniosComponent } from './categorias/banios/banios.component';
+import { CocinaComponent } from './categorias/cocina/cocina.component';
+import { VidriosYSuperficiesComponent } from './categorias/vidrios-y-superficies/vidrios-y-superficies.component';
+import { AlfombrasComponent } from './categorias/alfombras/alfombras.component';
 
 
 
@@ -37,11 +38,12 @@ const routes: Routes = [
     {path: 'resumen', component: ResumenComprasComponent},
 
     /* Rutas Categorias */
-    {path: 'ropa', component: CuidadoRopaComponent},
-    {path: 'limpiadores-especializados', component: LimpiadoresEspecializadosComponent},
-    {path: 'pisos', component: LimpiadoresPisosComponent},
-    {path: 'superficies', component: LimpiadoresSuperficiesComponent},
-    {path: 'mirachem', component: MirachemComponent},
+    {path: 'Ropa', component: RopaComponent},
+    {path: 'Pisos', component: PisosComponent},
+    {path: 'Baños', component: BaniosComponent},
+    {path: 'Cocina', component: CocinaComponent},
+    {path: 'Vidrios_y_Superficies', component: VidriosYSuperficiesComponent},
+    {path: 'Alfombras', component: AlfombrasComponent},
 
     {path: 'bolsa-trabajo', component: BolsaTrabajoComponent},
 
@@ -52,7 +54,7 @@ const routes: Routes = [
 
     /* Admin */
     {path: 'admin', component: AdminInicioComponent},
-    
+
     {path: 'nosotros', component: NosotrosComponent},
     {path: 'sucursales', component: SucursalesComponent},
     {path: 'contactanos', component: ContactanosComponent},

@@ -29,7 +29,7 @@ prodsFiltrados: pruebaMysql[] = [];
           /* this.http.get<pruebaMysql[]>(`${this.url}}`) */
           this.http.get<pruebaMysql[]>(this.url, {responseType: "json"})
           .subscribe( (resp: pruebaMysql[]) => {
-            console.log(resp);
+            console.log("los productos",resp);
             this.prueba = resp;
             console.log(this.prueba);
             setTimeout(() => {
