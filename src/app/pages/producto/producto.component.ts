@@ -28,26 +28,30 @@ export class ProductoComponent {
     imagenId: number;
     imagenSrc: string;
     mostrarModal: boolean = false;
-    
+
 
     constructor(
         private router:Router,
-        private route: ActivatedRoute, 
-        public pruebaMysql: PruebaMysqlService, 
+        private route: ActivatedRoute,
+        public pruebaMysql: PruebaMysqlService,
         private carritoService: CartService) {
             this.carrito = this.carritoService.obtenerProductos();
         }
 
     ngOnInit() {
         this.route.params.subscribe((parametros) => {
-            /* console.log(parametros['id']); */
+            console.log(parametros['id']);
 
             this.pruebaMysql.getProdPrueba(parametros['id']).subscribe((pruebaMysql: pruebaMysql) => {
                 this.id = parametros['id'];
-                /* console.log(pruebaMysql); */
+                console.log(pruebaMysql);
                 this.producto = pruebaMysql;
             });
         });
+    }
+
+    goBack() {
+      window.history.back();
     }
 
 
@@ -56,12 +60,12 @@ export class ProductoComponent {
         let imgen = document.querySelectorAll('.imagen');
         console.log(imgen[foto].getAttribute("src"));
         let imagen = imgen[foto].getAttribute("src")!;
-        
+
         this.imageUrl = imagen;
         console.log(imageUrl);
         this.modalVisible = true;
     }
-  
+
     cerrarModal() {
         this.modalVisible = false;
         /* this.modal.nativeElement.style.display = 'none'; */
@@ -93,7 +97,7 @@ export class ProductoComponent {
         this.carritoService.eliminarProducto(index);
         this.carrito = this.carritoService.obtenerProductos();
       }
-    
+
       vaciarCarrito(): void {
         this.carritoService.vaciarCarrito();
         this.carrito = this.carritoService.obtenerProductos();
@@ -111,5 +115,5 @@ export class ProductoComponent {
         // vaciar carrito al hacer click al finalizar compra
         /* this.carritoService.vaciarCarrito(); */
       }
-    
+
 }

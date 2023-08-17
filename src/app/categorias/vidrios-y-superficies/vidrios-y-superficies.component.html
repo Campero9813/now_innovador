@@ -1,8 +1,8 @@
 <section style="padding-top: 12rem;" class="section-gallery">
   <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-    <a *ngFor="let item of prodsNow.prueba" class="rk-item ae-masonry__item" [routerLink]="['/', item.categoria]">
+    <a *ngFor="let item of prodsNow.prueba" class="rk-item ae-masonry__item" [routerLink]="['/producto', item.id_producto]">
       <div *ngIf="item.categoria == 'Vidrios_y_Superficies'">
-        <img src="./assets/productos_now/{{item.imagen_portada}}" alt="">
+        <img src="./assets/productos_now/{{item.categoria}}/{{item.nombre_carpeta}}/{{item.imagen_principal}}" alt="">
         <div class="item-meta">
           <h2>{{ item.nombre_producto }}</h2>
           <h3>{{ item.presentacion }}</h3>

@@ -29,16 +29,35 @@
 
     <div class="container">
       <div class="boton-regresar">
-        <a routerLink="inicio" class="btn button-cards">Regresar
+        <a (click)="goBack()" class="btn button-cards">Regresar
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
           </svg>
         </a>
       </div>
+      <!-- Aqui las imagenes -->
+      <div style="padding-top: 10vh;" class="column-xs-12 column-md-8">
+        <div class="product-gallery">
+          <div class="product-image">
+            <img class="active imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_principal}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_principal}}', 0)">
+          </div>
+          <ul class="image-list">
+            <li class="image-item">
+              <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_1}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_1}}', 1)">
+            </li>
+            <li class="image-item">
+              <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}', 2)">
+            </li>
+            <li class="image-item">
+              <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}', 3)">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Aqui terminan las imagenes -->
       <div class="grid product">
         <div class="column-xs-12 column-md-4">
           <h1 style="color: #007041; font-weight: bold;">{{producto.nombre_producto}}</h1>
-          <!-- <h2  style="color: #007041;">{{producto.categoria}}</h2> -->
           <h2 style="color: #007041;">{{producto.precio | currency}}</h2>
           <div class="description">
             <p class="textJustify" style="color: #4a3f1b; font-weight: bold;">{{producto.descripcion}}</p>
@@ -48,14 +67,12 @@
         </div>
       </div>
     </div>
-
     <div class="modal" [style.display]="modalVisible ? 'block' : 'none'">
       <div class="modal-content">
         <span class="close" (click)="cerrarModal()">&times;</span>
         <img [src]="imageUrl" alt="Imagen" id="modal-image">
       </div>
     </div>
-
   </main>
 
   <!-- Contenedor del carrito de compras -->
@@ -82,11 +99,6 @@
         </tr>
       </tbody>
     </table>
-    <!-- <ul>
-            <li *ngFor="let carro of carrito; let i=index ">{{ carro.nombre_producto }}
-                <button (click)="eliminarDelCarrito(i) ">Eliminar</button>
-            </li>
-        </ul> -->
     <button class="botones_carrito" (click)="vaciarCarrito()">Vaciar Carrito</button>
     <button routerLink="checkout" class="botones_carrito" (click)="finalizarCompra()">Procesar Compra</button>
     <button class="boton-cerrar" (click)="carritoVisible = false">Cerrar Carrito</button>
