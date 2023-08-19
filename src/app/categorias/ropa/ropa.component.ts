@@ -12,4 +12,8 @@ export class RopaComponent {
     private router:Router,
     public prodsNow: PruebaMysqlService){}
 
+    goBack() {
+      window.history.back();
+    }
+
 }

@@ -36,7 +36,7 @@
         </a>
       </div>
       <!-- Aqui las imagenes -->
-      <div style="padding-top: 10vh;" class="column-xs-12 column-md-8">
+      <div style="padding-top: 10rem;" class="column-xs-12 column-md-8">
         <div class="product-gallery">
           <div class="product-image">
             <img class="active imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_principal}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_principal}}', 0)">
@@ -63,7 +63,8 @@
             <p class="textJustify" style="color: #4a3f1b; font-weight: bold;">{{producto.descripcion}}</p>
           </div>
           <p class="textJustify" style="color: black; font-weight: bold;">Contenido: {{producto.presentacion}}</p>
-          <button class="button-cards" (click)="agregarAlCarrito(producto)">Agregar a carrito</button>
+          <app-whatsapp></app-whatsapp>
+          <!-- <button class="button-cards" (click)="agregarAlCarrito(producto)">Agregar a carrito</button> -->
         </div>
       </div>
     </div>
@@ -76,7 +77,7 @@
   </main>
 
   <!-- Contenedor del carrito de compras -->
-  <div *ngIf="carritoVisible" class="carrito-contenedor">
+  <!-- <div *ngIf="carritoVisible" class="carrito-contenedor">
 
     <h2>Carrito de compras </h2>
     <table id="lista-carrito" class="u-full-width">
@@ -103,10 +104,10 @@
     <button routerLink="checkout" class="botones_carrito" (click)="finalizarCompra()">Procesar Compra</button>
     <button class="boton-cerrar" (click)="carritoVisible = false">Cerrar Carrito</button>
 
-  </div>
+  </div> -->
   <!-- Botón flotante para ver el carrito -->
-  <button class="boton-flotante" (click)="verCarrito()">
+  <!-- <button class="boton-flotante" (click)="verCarrito()">
     <i class="fas fa-shopping-cart">{{ carrito.length }}</i>
-  </button>
+  </button> -->
 
 </section>

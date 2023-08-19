@@ -11,4 +11,8 @@ export class CocinaComponent {
   constructor(
     private router:Router,
     public prodsNow: PruebaMysqlService){}
+
+    goBack() {
+      window.history.back();
+    }
 }

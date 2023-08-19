@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./whatsapp.component.css']
 })
 export class WhatsappComponent {
-
+  redirectToWhats() {
+    const whats = 'https://wa.me/525625813142'; // Enlace a chat whatsapp
+    window.open(whats, '_blank');
+  }
 }

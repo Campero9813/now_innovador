@@ -43,6 +43,7 @@ prodsFiltrados: pruebaMysql[] = [];
   }
 
   getProdPrueba(id: String){
+    /* console.log(id); */
     /* Esta es la ruta de dev ---> */   return this.http.get(`http://192.168.1.40/webservice_dev/NowImagenes/getConsulta/?id_producto=${ id }`);
     /* Esta es la ruta de prod ---> */   /*  return this.http.get(`https://lifeproducts.mx/webservices/lifeproducts/ObtenerProductos/?id_producto=${ id }`);    */
     /* console.log("aqui viene el producto"); */

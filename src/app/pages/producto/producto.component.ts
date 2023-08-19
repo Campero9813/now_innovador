@@ -44,7 +44,7 @@ export class ProductoComponent {
 
             this.pruebaMysql.getProdPrueba(parametros['id']).subscribe((pruebaMysql: pruebaMysql) => {
                 this.id = parametros['id'];
-                console.log(pruebaMysql);
+                console.log('Se imprime',pruebaMysql);
                 this.producto = pruebaMysql;
             });
         });
@@ -56,13 +56,13 @@ export class ProductoComponent {
 
 
     mostrarImagen(imageUrl: string, foto: number) {
-        console.log("Hola si estoy intentando abrir");
+        /* console.log("Hola si estoy intentando abrir"); */
         let imgen = document.querySelectorAll('.imagen');
-        console.log(imgen[foto].getAttribute("src"));
+        /* console.log(imgen[foto].getAttribute("src")); */
         let imagen = imgen[foto].getAttribute("src")!;
 
         this.imageUrl = imagen;
-        console.log(imageUrl);
+        /* console.log(imageUrl); */
         this.modalVisible = true;
     }
 
