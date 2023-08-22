@@ -14,6 +14,7 @@ export interface pruebaMysql {
     nombre_carpeta?: string ;
     cantidad?: number ;
     presentacion?: string;
+    id_estatus?: number;
     /* id_producto?: string;
     nombre_producto?: string| null | undefined;
     clave_producto?: string | null | undefined;

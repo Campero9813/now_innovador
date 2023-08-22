@@ -23,9 +23,9 @@
     <section style="padding-top: 12rem;" class="section-gallery">
       <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
         <a *ngFor="let item of prodsNow.prueba" class="rk-item ae-masonry__item" [routerLink]="['/', item.categoria]">
-          <div *ngIf="item.presentacion == '10 L' || item.presentacion == '1 L' || item.presentacion == '9 L' || item.categoria == 'Alfombra' || item.categoria == 'Cocina'">
+          <div *ngIf="item.id_estatus == 1">
             <!-- <img src="./assets/img/pruebas/{{item.imagen_portada}}" alt=""> -->
-            <img src="./assets/productos_now/{{item.imagen_portada}}" alt="">
+            <img src="./assets/productos_now/pruebas/{{item.imagen_portada}}.jpg" alt="">
             <div class="item-meta">
               <h2>{{ item.nombre_producto }}</h2>
               <h3>{{ item.presentacion }}</h3>

@@ -38,8 +38,6 @@ prodsFiltrados: pruebaMysql[] = [];
           });
 
       });
-
-
   }
 
   getProdPrueba(id: String){
