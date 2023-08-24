@@ -3,7 +3,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
 <section *ngIf="producto">
   <!-- Loading -->
-  <div style="margin-top: 10em;" class="grid product" align="center" *ngIf="pruebaMysql.cargando">
+  <div style="margin-top: 10em;" class="grid product" align="center" *ngIf="productosMysql.cargando">
     <h2>Cargando...</h2>
 
     <div class="loader loader--style1" title="0">
@@ -25,7 +25,7 @@
   </div>
   <!-- End Loading -->
 
-  <main style="padding-top: 10rem;" *ngIf="!pruebaMysql.cargando">
+  <main style="padding-top: 10rem;" *ngIf="!productosMysql.cargando">
 
     <div class="container">
       <div class="boton-regresar">
@@ -35,27 +35,28 @@
           </svg>
         </a>
       </div>
-      <!-- Aqui las imagenes -->
-      <div style="padding-top: 10rem;" class="column-xs-12 column-md-8">
-        <div class="product-gallery">
-          <div class="product-image">
-            <img class="active imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_principal}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_principal}}', 0)">
-          </div>
-          <ul class="image-list">
-            <li class="image-item">
-              <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_1}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_1}}', 1)">
-            </li>
-            <li class="image-item">
-              <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}', 2)">
-            </li>
-            <li class="image-item">
-              <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}', 3)">
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Aqui terminan las imagenes -->
       <div class="grid product">
+        <!-- Aqui las imagenes -->
+        <div style="padding-top: 10rem;" class="column-xs-12 column-md-8">
+          <div class="product-gallery">
+            <div class="product-image">
+              <img class="active imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_principal}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_principal}}', 0)">
+            </div>
+            <ul class="image-list">
+              <li class="image-item">
+                <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_1}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_1}}', 1)">
+              </li>
+              <li class="image-item">
+                <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}', 2)">
+              </li>
+              <li class="image-item">
+                <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}', 3)">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Aqui terminan las imagenes -->
+
         <div class="column-xs-12 column-md-4">
           <h1 style="color: #007041; font-weight: bold;">{{producto.nombre_producto}}</h1>
           <h2 style="color: #007041;">{{producto.precio | currency}}</h2>

@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
-import { pruebaMysql } from '../interfaces/prueba-mysql.interface';
+import { productosMysql } from '../interfaces/productos.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   private carritoKey = 'carrito';
-  productos: pruebaMysql[] = [];
+  productos: productosMysql[] = [];
 
   constructor(private http: HttpClient){
     const carritoGuardado = localStorage.getItem(this.carritoKey);
@@ -20,7 +20,7 @@ export class CartService {
     localStorage.setItem(this.carritoKey, JSON.stringify(this.productos));
   }
 
-  agregarProducto(producto: pruebaMysql): void {
+  agregarProducto(producto: productosMysql): void {
     const productoExistente = this.productos.find(p => p.id_producto === producto.id_producto);
   if (productoExistente) {
     if (productoExistente.cantidad) {
@@ -37,10 +37,10 @@ export class CartService {
     this.guardarCarrito(); */
   }
 
-  obtenerProductos(): pruebaMysql[] {
+  obtenerProductos(): productosMysql[] {
     this.guardarCarrito();
     return this.productos;
-    
+
   }
 
   eliminarProducto(index: number): void {

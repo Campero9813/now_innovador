@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 
 @Component({
@@ -11,22 +11,27 @@ import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
 export class EspecialidadesComponent {
   constructor(
     private router:Router,
-    public prodsNow: PruebaMysqlService){
-      document.addEventListener('DOMContentLoaded', function() {
-        const elements = document.querySelectorAll('.has-animation');
+    public prodsNow: ProductosService,
+    private renderer: Renderer2
+    ){}
 
-        elements.forEach(function(element) {
-          const delay = parseInt(element.getAttribute('data-delay') || '0', 10);
-
-          setTimeout(function() {
-            element.classList.add('animate-in');
-          }, delay);
-        });
-      });
+    ngAfterViewInit() {
+      this.animationInit();
     }
 
     goBack() {
       window.history.back();
     }
 
+    animationInit(){
+      const elements = document.querySelectorAll('.has-animation');
+
+      elements.forEach((element) => {
+      const delay = parseInt(element.getAttribute('data-delay') || '0', 10);
+
+      setTimeout(() => {
+        this.renderer.addClass(element, 'animate-in');
+      }, delay);
+    });
+    }
 }

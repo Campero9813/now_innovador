@@ -5,7 +5,7 @@ import {SharingService} from 'src/app/services/sharing.service';
 
 import {environment} from 'src/environments/environment';
 import {CartService} from 'src/app/services/cart.service';
-import {pruebaMysql} from 'src/app/interfaces/prueba-mysql.interface';
+import {productosMysql} from 'src/app/interfaces/productos.interface';
 
 //Datos para enviar a mercado pago
 import {mercadopago} from 'src/app/interfaces/mercadopago.interface';
@@ -27,7 +27,7 @@ export class ResumenComprasComponent {
     returnUrl: any;
 
     //Orden Total
-    carrito: pruebaMysql[] = [];
+    carrito: productosMysql[] = [];
     subtotal: number = 0;
     envio: number = 90;
     total: number = 0;

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { pruebaMysql } from 'src/app/interfaces/prueba-mysql.interface';
+import { productosMysql } from 'src/app/interfaces/productos.interface';
 import { CartService } from 'src/app/services/cart.service';
-import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
+import { ProductosService } from 'src/app/services/productos.service';
 import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
@@ -11,14 +11,14 @@ import { SharingService } from 'src/app/services/sharing.service';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent {
-carrito: pruebaMysql[]=[];
+carrito: productosMysql[]=[];
 subtotal: number = 0;
 envio: number = 90;
 total: number = 0;
 
   constructor(
     public cart: CartService,
-    private carritoService: CartService, 
+    private carritoService: CartService,
     private router: Router,
     private dataSharing: SharingService
     ){
@@ -69,22 +69,22 @@ total: number = 0;
       // vaciar carrito al hacer click al finalizar compra
       /* this.carritoService.vaciarCarrito(); */
   }
-  /* 
-  incrementarCantidad(producto: pruebaMysql): void {
+  /*
+  incrementarCantidad(producto: productosMysql): void {
     if (producto.cantidad !== undefined) {
       producto.cantidad++;
       this.calcularTotal();
     }
   }
 
-  decrementarCantidad(producto: pruebaMysql): void {
+  decrementarCantidad(producto: productosMysql): void {
     if (producto.cantidad !== undefined) {
       if (producto.cantidad > 1) {
         producto.cantidad--;
         this.calcularTotal();
       }
     }
-  } 
+  }
   */
 
 }

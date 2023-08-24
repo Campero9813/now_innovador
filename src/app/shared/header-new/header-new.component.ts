@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { InfoPaginaService } from '../../services/info-pagina.service';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header-new',
@@ -17,7 +17,19 @@ export class HeaderNewComponent {
     private router:Router,
     private elementRef: ElementRef ) {}
 
+    public mensaje(){
+      setTimeout(() => {
+        Swal.fire({
+          icon: 'question',
+          title: 'UPS!',
+          text: 'Por el momento no hay productos disponibles'
+        });
+      }, 100);
 
+      setTimeout(function () {
+        Swal.close();
+      }, 4500);
+    }
 
     buscarProducto( termino: string){
     console.log(termino);

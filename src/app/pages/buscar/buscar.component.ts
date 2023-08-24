@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
-import { pruebaMysql } from 'src/app/interfaces/prueba-mysql.interface';
+import { productosMysql } from 'src/app/interfaces/productos.interface';
 import { CartService } from 'src/app/services/cart.service';
-import { ProdVideoService } from 'src/app/services/prod-video.service';
-import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
+
+import { ProductosService } from 'src/app/services/productos.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,13 +12,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./buscar.component.css']
 })
 export class BuscarComponent {
-  carrito: pruebaMysql[] = [];
+  carrito: productosMysql[] = [];
   carritoVisible = false;
 
   constructor (private route: ActivatedRoute,
     private router: Router,
-    public pruebas1: PruebaMysqlService,
-    public prodVideoService: ProdVideoService,
+    public pruebas1: ProductosService,
+
     private carritoService: CartService) {
       this.carrito = this.carritoService.obtenerProductos();
   }
@@ -33,7 +33,7 @@ export class BuscarComponent {
 
 
   /* Carrito de Compras */
-  agregarAlCarrito(producto1: pruebaMysql): void {
+  agregarAlCarrito(producto1: productosMysql): void {
     this.carritoService.agregarProducto(producto1);
     this.carrito = this.carritoService.obtenerProductos();
     // Abrir la alerta Swal después de medio segundos

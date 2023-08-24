@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
-import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-ropa',
@@ -10,10 +10,28 @@ import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
 export class RopaComponent {
   constructor(
     private router:Router,
-    public prodsNow: PruebaMysqlService){}
+    public prodsNow: ProductosService,
+    private renderer: Renderer2
+    ){}
+
+    ngAfterViewInit() {
+      this.animationInit();
+    }
 
     goBack() {
       window.history.back();
+    }
+
+    animationInit(){
+      const elements = document.querySelectorAll('.has-animation');
+
+      elements.forEach((element) => {
+      const delay = parseInt(element.getAttribute('data-delay') || '0', 10);
+
+      setTimeout(() => {
+        this.renderer.addClass(element, 'animate-in');
+      }, delay);
+    });
     }
 
 }

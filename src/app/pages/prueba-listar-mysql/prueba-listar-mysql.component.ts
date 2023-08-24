@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-prueba-listar-mysql',
@@ -8,6 +8,6 @@ import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
 })
 export class PruebaListarMysqlComponent {
 
-  constructor( public pruebaMysql: PruebaMysqlService){ }
+  constructor( public productosMysql: ProductosService){ }
 
 }

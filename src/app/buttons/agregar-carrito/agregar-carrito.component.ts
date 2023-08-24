@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Producto } from 'src/app/interfaces/producto.interface';
 import { CartService } from 'src/app/services/cart.service';
 
 
@@ -35,10 +34,10 @@ agregarCarrito(){
   }
 
   agregar(){
-    
+
     let btnNew = document.querySelectorAll('.button');
     btnNew.forEach(button => button.addEventListener('click', e => {
-    
+
       if(!button.classList.contains('loading')) {
           button.classList.add('loading');
           setTimeout(() => button.classList.remove('loading'), 3700);

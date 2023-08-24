@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
+import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
   selector: 'app-mirachem',
@@ -10,7 +10,7 @@ import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
 export class MirachemComponent {
   constructor(
     private router:Router,
-    public prodsNow: PruebaMysqlService){}
+    public prodsNow: ProductosService){}
 
     goBack() {
       window.history.back();

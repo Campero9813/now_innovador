@@ -2,11 +2,9 @@
 import { Inject, ElementRef, ViewChild, OnInit, AfterViewInit, Renderer2, HostListener } from '@angular/core';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { ProdVideoService } from 'src/app/services/prod-video.service';
-import { ProductosService } from 'src/app/services/productos.service';
 import { ProdCompleto } from 'src/app/interfaces/prod-completo.interface';
-import { PruebaMysqlService } from 'src/app/services/prueba-mysql.service';
-import { pruebaMysql } from '../../interfaces/prueba-mysql.interface';
+import { ProductosService } from 'src/app/services/productos.service';
+import { productosMysql } from '../../interfaces/productos.interface';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -38,7 +36,7 @@ export class InicioComponent implements AfterViewInit{
   animateTitle = false;
   animateImages = false;
 
-  carrito: pruebaMysql[] = [];
+  carrito: productosMysql[] = [];
   carritoVisible = false;
 
 
@@ -64,9 +62,7 @@ export class InicioComponent implements AfterViewInit{
 
   constructor(
     private router:Router,
-    public productoService: ProductosService,
-    public prodService: ProdVideoService,
-    public prodsNow: PruebaMysqlService,
+    public prodsNow: ProductosService,
     private carritoService: CartService,
     private renderer: Renderer2,
     private elementRef: ElementRef){
@@ -108,7 +104,7 @@ export class InicioComponent implements AfterViewInit{
 
 
       /* Carrito de Compras */
-      agregarAlCarrito(producto1: pruebaMysql): void {
+      agregarAlCarrito(producto1: productosMysql): void {
         this.carritoService.agregarProducto(producto1);
         this.carrito = this.carritoService.obtenerProductos();
         // Abrir la alerta Swal después de medio segundos
@@ -153,14 +149,14 @@ export class InicioComponent implements AfterViewInit{
         /* this.carritoService.vaciarCarrito(); */
       }
 
-      incrementarCantidad(producto: pruebaMysql): void {
+      incrementarCantidad(producto: productosMysql): void {
         const productoExistente = this.carrito.find(p => p.id_producto === producto.id_producto);
         if (productoExistente) {
           productoExistente.cantidad!++;
         }
       }
 
-      decrementarCantidad(producto: pruebaMysql): void {
+      decrementarCantidad(producto: productosMysql): void {
         const productoExistente = this.carrito.find(p => p.id_producto === producto.id_producto);
         if (productoExistente) {
           if (productoExistente.cantidad! > 1 ) {

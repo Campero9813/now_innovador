@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {InfoPaginaService} from './services/info-pagina.service';
-import {ProductosService} from './services/productos.service';
-import { PruebaMysqlService } from './services/prueba-mysql.service';
+import { ProductosService } from './services/productos.service';
 import { ViewportScroller } from '@angular/common';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -15,9 +14,8 @@ export class AppComponent {
 showHeader = true;
 
   constructor(
-    public _infoPaginaService: InfoPaginaService, 
-    public productosService: ProductosService, 
-    public pruebaMysql: PruebaMysqlService,
+    public _infoPaginaService: InfoPaginaService,
+    public productosMysql: ProductosService,
     private viewportScroller: ViewportScroller,
     private router: Router
     ) {}
