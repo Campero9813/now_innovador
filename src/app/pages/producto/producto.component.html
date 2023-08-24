@@ -35,27 +35,53 @@
           </svg>
         </a>
       </div>
+
+
       <div class="grid product">
-        <!-- Aqui las imagenes -->
-        <div style="padding-top: 10rem;" class="column-xs-12 column-md-8">
-          <div class="product-gallery">
-            <div class="product-image">
-              <img class="active imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_principal}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_principal}}', 0)">
+        <ng-container *ngIf="mostrar10L; else elseTemplate20">
+          <!-- Aqui las imagenes -->
+          <div style="padding-top: 10rem;" class="column-xs-12 column-md-8">
+            <div class="product-gallery">
+              <div class="product-image">
+                <img class="active imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_principal}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_principal}}', 0)">
+              </div>
+              <ul class="image-list">
+                <li class="image-item">
+                  <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_1}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_1}}', 1)">
+                </li>
+                <li class="image-item">
+                  <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}', 2)">
+                </li>
+                <li class="image-item">
+                  <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}', 3)">
+                </li>
+              </ul>
             </div>
-            <ul class="image-list">
-              <li class="image-item">
-                <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_1}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_1}}', 1)">
-              </li>
-              <li class="image-item">
-                <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_2}}', 2)">
-              </li>
-              <li class="image-item">
-                <img class="imagen" src="assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{ producto.nombre_carpeta }}/{{producto.imagen_3}}', 3)">
-              </li>
-            </ul>
           </div>
-        </div>
-        <!-- Aqui terminan las imagenes -->
+          <!-- Aqui terminan las imagenes -->
+        </ng-container>
+        <ng-template #elseTemplate20>
+          <!-- Aqui las imagenes -->
+          <div style="padding-top: 10rem;" class="column-xs-12 column-md-8">
+            <div class="product-gallery">
+              <div class="product-image">
+                <img class="active imagen" src="assets/productos_now/Ropa/prod-5/main.png" (click)="mostrarImagen('assets/productos_now/{{producto.categoria}}/{{producto.nombre_carpeta}}/{{producto.imagen_principal}}', 0)">
+              </div>
+              <ul class="image-list">
+                <li class="image-item">
+                  <img class="imagen" src="assets/productos_now/Ropa/prod-5/main.png" (click)="mostrarImagen('assets/productos_now/Ropa/prod-5/main.png', 1)">
+                </li>
+                <li class="image-item">
+                  <img class="imagen" src="assets/productos_now/Ropa/prod-5/main.png" (click)="mostrarImagen('assets/productos_now/Ropa/prod-5/main.png', 2)">
+                </li>
+                <li class="image-item">
+                  <img class="imagen" src="assets/productos_now/Ropa/prod-5/main.png" (click)="mostrarImagen('assets/productos_now/Ropa/prod-5/main.png', 3)">
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Aqui terminan las imagenes -->
+        </ng-template>
 
         <div class="column-xs-12 column-md-4">
           <h1 style="color: #007041; font-weight: bold;">{{producto.nombre_producto}}</h1>
@@ -63,7 +89,10 @@
           <div class="description">
             <p class="textJustify" style="color: #4a3f1b; font-weight: bold;">{{producto.descripcion}}</p>
           </div>
-          <p class="textJustify" style="color: black; font-weight: bold;">Contenido: {{producto.presentacion}}</p>
+          <p class="textJustify" style="color: black; font-weight: bold;">Contenido:</p>
+          <button class="btn btn-info" style="margin: 2px;" (click)="toggleTemplateA()">10 L</button>
+          <button class="btn btn-info" style="margin: 2px;" (click)="toggleTemplateB()">20 L</button>
+
           <app-whatsapp></app-whatsapp>
           <!-- <button class="button-cards" (click)="agregarAlCarrito(producto)">Agregar a carrito</button> -->
         </div>

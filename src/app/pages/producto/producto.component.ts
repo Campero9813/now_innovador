@@ -38,6 +38,17 @@ export class ProductoComponent {
             this.carrito = this.carritoService.obtenerProductos();
         }
 
+        mostrar10L = true; // Inicialmente mostrar el primer template
+
+        toggleTemplateA() {
+          this.mostrar10L = true;
+        }
+
+        toggleTemplateB() {
+          this.mostrar10L = false;
+        }
+
+
     ngOnInit() {
         this.route.params.subscribe((parametros) => {
             console.log(parametros['id']);

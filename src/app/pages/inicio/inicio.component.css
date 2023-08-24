@@ -10,7 +10,7 @@ h1 {
 h1.elegantshadow {
   color: #131313;
   letter-spacing: 0.15em;
-  text-shadow:
+  /* text-shadow: */
   /* 1px -1px 0 #4169E1,
   -1px 2px 1px #3D71E8,
   -2px 4px 1px #3879EF,
@@ -41,7 +41,7 @@ h1.elegantshadow {
   -27px 54px 1px #00FFFF,
   -28px 56px 1px #00FFFF; */
 
-  1px -1px 0 #767676,
+  /* 1px -1px 0 #767676,
   -1px 2px 1px #737272,
   -2px 4px 1px #767474,
   -3px 6px 1px #787777,
@@ -69,7 +69,7 @@ h1.elegantshadow {
   -25px 50px 1px #dbdad9,
   -26px 52px 1px #dfdddc,
   -27px 54px 1px #e2e0df,
-  -28px 56px 1px #e4e3e2;
+  -28px 56px 1px #e4e3e2; */
 }
 
 
