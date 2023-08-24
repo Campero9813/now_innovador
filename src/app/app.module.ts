@@ -38,10 +38,9 @@ import { ChatbotComponent } from './buttons/chatbot/chatbot.component';
 import { ChatbotButtonComponent } from './buttons/chatbot-button/chatbot-button.component';
 import { RopaComponent } from './categorias/ropa/ropa.component';
 import { PisosComponent } from './categorias/pisos/pisos.component';
-import { BaniosComponent } from './categorias/banios/banios.component';
-import { CocinaComponent } from './categorias/cocina/cocina.component';
-import { VidriosYSuperficiesComponent } from './categorias/vidrios-y-superficies/vidrios-y-superficies.component';
-import { AlfombrasComponent } from './categorias/alfombras/alfombras.component';
+import { SuperficiesComponent } from './categorias/superficies/superficies.component';
+import { EspecialidadesComponent } from './categorias/especialidades/especialidades.component';
+import { MirachemComponent } from './categorias/mirachem/mirachem.component';
 
 @NgModule({
     declarations: [
@@ -74,10 +73,9 @@ import { AlfombrasComponent } from './categorias/alfombras/alfombras.component';
         ChatbotButtonComponent,
         RopaComponent,
         PisosComponent,
-        BaniosComponent,
-        CocinaComponent,
-        VidriosYSuperficiesComponent,
-        AlfombrasComponent
+        SuperficiesComponent,
+        EspecialidadesComponent,
+        MirachemComponent
     ],
     imports: [
         CommonModule,

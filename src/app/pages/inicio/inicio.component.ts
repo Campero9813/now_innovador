@@ -1,5 +1,5 @@
 
-import { Inject, ElementRef, ViewChild, OnInit, AfterViewInit, Renderer2 } from '@angular/core';
+import { Inject, ElementRef, ViewChild, OnInit, AfterViewInit, Renderer2, HostListener } from '@angular/core';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { ProdVideoService } from 'src/app/services/prod-video.service';
@@ -24,7 +24,6 @@ interface Fotorama {
   // Otros campos o métodos que puedan existir en el objeto 'fotorama'.
 }
 
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -32,12 +31,12 @@ interface Fotorama {
 })
 
 
-
-
 export class InicioComponent implements AfterViewInit{
 
   private initialized: boolean = false
 
+  animateTitle = false;
+  animateImages = false;
 
   carrito: pruebaMysql[] = [];
   carritoVisible = false;
@@ -46,7 +45,6 @@ export class InicioComponent implements AfterViewInit{
   limite: number = 73;
   txtAcortado: string = '';
   txtCompleto: string = '';
-
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -71,82 +69,41 @@ export class InicioComponent implements AfterViewInit{
     public prodsNow: PruebaMysqlService,
     private carritoService: CartService,
     private renderer: Renderer2,
-    private el: ElementRef){
-
+    private elementRef: ElementRef){
       this.carrito = this.carritoService.obtenerProductos();
-
     }
 
 
+    /* Animaciones Inicio */
+        @HostListener('window:scroll', ['$event'])
+        onWindowScroll() {
+          this.checkScrollPosition();
+        }
+
+        checkScrollPosition() {
+          if (!this.animateTitle && this.isScrolledIntoView('.titulo')) {
+            this.animateTitle = true;
+          }
+          if (!this.animateImages && this.isScrolledIntoView('.imagenes')) {
+            this.animateImages = true;
+          }
+        }
+
+        isScrolledIntoView(selector: string): boolean {
+          const element = document.querySelector(selector);
+          if (!element) return false;
+
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          return rect.top <= windowHeight && rect.bottom >= 0;
+        }
+    /* End Animaciones inicio */
 
 
-/* Galeria de imagenes */
-
-ngOnInit() {
-  // overlay para una transición más suave al modo de pantalla completa
-  const $overlay = $('<div class="fotorama-overlay"></div>')
-    .css({
-      position: "fixed",
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
-      zIndex: 10001,
-    })
-    .fadeTo(0, 0)
-    .hide()
-    .appendTo("body");
-
-  // tomar todos los bloques .fotorama
-  $(".section-gallery").each( () => {
-    const $gallery = $(this);
-    // clonar y crear el fotorama
-    const $fotorama = $(".fotorama-thumbs", $gallery)
-      .clone()
-      // .show()
-      .css({ position: "absolute", left: -99999, top: -99999 })
-      .appendTo("body")
-      .fadeTo(0, 0)
-      .fotorama();
-    const fotorama = $fotorama.data("fotorama");
-
-    for (let i = 0, l = fotorama.data.length; i < l; i++) {
-      // preparar el id para usarlo en fotorama.show()
-      fotorama.data[i].id = fotorama.data[i].img;
-    }
-
-    // asociar los clics
-    $gallery.on("click", "a",  (e: Event) => {
-      e.preventDefault();
-
-      const $this = $(this);
-
-      $overlay
-        .show()
-        .stop()
-        .fadeTo(150, 1, function () {
-          $fotorama.stop().fadeTo(150, 1);
-
-          // llamadas a la API
-          fotorama
-            // mostrar el marco necesario
-            .show({ index: $this.attr("href"), time: 0 })
-            // abrir en pantalla completa
-            .requestFullScreen();
-        });
-    });
-
-    $fotorama.on("fotorama:fullscreenexit", function () {
-      $fotorama.stop().fadeTo(0, 0);
-      $overlay.stop().fadeTo(300, 0, function () {
-        $overlay.hide();
-      });
-    });
-  });
-}
 
 
-/* Fin Galeria de imagenes */
+
+
 
 
 

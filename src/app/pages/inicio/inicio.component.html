@@ -1,104 +1,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 <section class="ae-container-fluid rk-main">
+  <!-- Loading -->
+  <div style="padding-top: 12rem;" align="center" *ngIf="prodService.cargando">
+    <h2>Cargando...</h2>
 
-
-  <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio" style="margin-bottom: 4rem">
-    <!-- Loading -->
-    <div style="padding-top: 12rem;" align="center" *ngIf="prodService.cargando">
-      <h2>Cargando...</h2>
-
-      <div class="loader loader--style1" title="0">
-        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-          <path opacity="0.2" fill="#000"
-            d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
-          <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z">
-            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite" />
-          </path>
-        </svg>
-      </div>
+    <div class="loader loader--style1" title="0">
+      <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+        <path opacity="0.2" fill="#000"
+          d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z" />
+        <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z">
+          <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite" />
+        </path>
+      </svg>
     </div>
-    <!-- End Loading -->
-
-    <section style="padding-top: 12rem;" class="section-gallery">
-      <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a *ngFor="let item of prodsNow.prueba" class="rk-item ae-masonry__item" [routerLink]="['/', item.categoria]">
-          <div *ngIf="item.id_estatus == 1">
-            <!-- <img src="./assets/img/pruebas/{{item.imagen_portada}}" alt=""> -->
-            <img src="./assets/productos_now/pruebas/{{item.imagen_portada}}.jpg" alt="">
-            <div class="item-meta">
-              <h2>{{ item.nombre_producto }}</h2>
-              <h3>{{ item.presentacion }}</h3>
-              <p>{{ item.categoria }}</p>
-            </div>
-          </div>
-          <!-- <ng-container *ngIf="item.presentacion == '10 L' || item.presentacion == '1 L'; else elseTemplate">
-            <img src="./assets/productos_now/{{item.imagen_portada}}" alt="">
-            <div class="item-meta">
-              <h2>{{ item.nombre_producto }}</h2>
-              <h3>{{ item.presentacion }}</h3>
-              <p>{{ item.categoria }}</p>
-            </div>
-          </ng-container>
-          <ng-template #elseTemplate>
-            <h1>Hola no hay productos</h1>
-          </ng-template> -->
-
-
-        </a>
-      </div>
-
-      <!-- <div class="container-fluid">
-              <div class="img-grid-gallery">
-                <div class="img-grid-item bytwo">
-              <div>
-                    <a href="./assets/categorias/612-731/cuidado_ropa/principal.png"><img src="./assets/categorias/612-731/cuidado_ropa/principal.png" width="467" height="349"/></a>
-              </div>
-              <div>
-                    <a href="./assets/categorias/612-731/cuidado_ropa/secundaria.png"><img src="./assets/categorias/612-731/cuidado_ropa/secundaria.png" width="467" height="349"/></a></div>
-                </div>
-                <div class="img-grid-item byone">
-                <div>
-                    <a href="./assets/productos_now/project-1.png"><img src="./assets/productos_now/project-3.png" width="792" height="931"/></a></div>
-                </div>
-                <div class="img-grid-item byfour">
-                  <div class="img-grid-inner">
-                    <div class="large">
-                      <a href="./assets/categorias/612-731/limpiadores_pisos/principal.png"><img src="./assets/categorias/612-731/limpiadores_pisos/principal.png" width="467" height="349" /></a>
-                    </div>
-                    <div class="small">
-                      <a href="./assets/categorias/612-731/limpiadores_pisos/secundaria.png"><img src="./assets/categorias/612-731/limpiadores_pisos/secundaria.png" width="467" height="349" /></a>
-                    </div>
-                  </div>
-                  <div class="img-grid-inner">
-                    <div class="small">
-                      <a href="./assets/categorias/612-731/limpiadores_superficies/principal.png"><img src="./assets/categorias/612-731/limpiadores_superficies/principal.png" width="467" height="349" /></a>
-                    </div>
-                    <div class="large">
-                      <a href="./assets/categorias/612-731/limpiadores_superficies/secundaria.png"><img src="./assets/categorias/612-731/limpiadores_superficies/secundaria.png" width="467" height="349" /></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="fotorama-thumbs" data-auto="false" data-allow-full-screen="true" data-nav="thumbs">
-                <a href="./assets/categorias/612-731//project-1"><img src="./assets/categorias/612-731/project-1.png" width="467" height="349"/></a>
-                <a href="./assets/categorias/612-731//project-2"><img src="./assets/categorias/612-731/project-2.png" width="467" height="349"/></a>
-                <a href="./assets/categorias/612-731//project-3"><img src="./assets/categorias/612-731/project-3.png" width="612" height="731"/></a>
-                <a href="./assets/categorias/612-731//project-4"><img src="./assets/categorias/612-731/project-4.png" width="467" height="349"/></a>
-                <a href="./assets/categorias/612-731//project-5"><img src="./assets/categorias/612-731/project-5.png" width="467" height="349"/></a>
-                <a href="./assets/categorias/612-731//project-6"><img src="./assets/categorias/612-731/project-6.png" width="467" height="349"/></a>
-                <a href="./assets/categorias/612-731//project-7"><img src="./assets/categorias/612-731/project-7.png" width="467" height="349"/></a>
-                <a href="./assets/categorias/612-731//project-8"><img src="./assets/categorias/612-731/project-8.png" width="467" height="349"/></a>
-                <a href="./assets/categorias/612-731//project-9"><img src="./assets/categorias/612-731/project-9.png" width="467" height="349"/></a>
-                <a href="./assets/categorias/612-731//project-10"><img src="./assets/categorias/612-731/project-10.png" width="467" height="349"/></a>
-              </div>
-
-            </div> -->
-    </section>
-
-  </section>
-
+  </div>
+  <!-- End Loading -->
 
 
   <!-- banners -->
@@ -130,6 +47,67 @@
     </button>
   </div>
   <!-- End banners -->
+  <!-- Animacion -->
+  <div class="centrar">
+    <div class="animacion titulo" [ngClass]="{'animate__animated animate__fadeInBottomLeft': animateTitle}">
+      <h1 class='elegantshadow'>Conoce Nuestras Categorias</h1>
+    </div>
+
+  </div>
+  <!-- <h1>Conoce nuestras Categorias</h1> -->
+  <!-- End Animacion -->
+
+  <!-- Section Categorias -->
+  <!-- <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio" style="margin-bottom: 4rem"> -->
+
+  <section style="padding: 10rem;" class="section-gallery">
+    <div class="imagenes ae-grid">
+      <div class="ae-grid__item item-lg--auto" [ngClass]="{'animate__animated animate__fadeInLeft': animateTitle}">
+        <a routerLink="/pisos" class="rk-item">
+          <img src="./assets/productos_now/Categorias/pisos.png">
+          <div class="item-meta">
+            <h2>Limpieza de Pisos</h2>
+            <p>Ver Más</p>
+          </div>
+        </a>
+      </div>
+      <div class="ae-grid__item item-lg--auto" [ngClass]="{'animate__animated animate__fadeInRight': animateTitle}">
+        <a routerLink="/ropa" class="rk-item">
+          <img src="./assets/productos_now/Categorias/ropa.png" alt="">
+          <div class="item-meta">
+            <h2>Cuidado de la Ropa</h2>
+            <p>Ver Más</p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="imagenes ae-grid">
+      <div class="ae-grid__item item-lg--auto" [ngClass]="{'animate__animated animate__fadeInLeft': animateTitle}">
+        <a routerLink="/superficies" class="rk-item">
+          <img src="./assets/productos_now/Categorias/superficies.png" alt="">
+          <div class="item-meta">
+            <h2>Limpieza de Superficies</h2>
+            <p>Ver Más</p>
+          </div>
+        </a>
+      </div>
+      <div class="ae-grid__item item-lg--auto" [ngClass]="{'animate__animated animate__fadeInRight': animateTitle}">
+        <a routerLink="/especialidades" class="rk-item">
+          <img src="./assets/productos_now/Categorias/especialidades.png" alt="">
+          <div class="item-meta">
+            <h2>Limpiadores de Especialidades</h2>
+            <p>Ver Más</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- </section> -->
+  <!-- End Section Categorias -->
+
+
+
 
   <!-- video -->
   <div id="carouselExampleIndicators " class="carousel slide" style="margin-bottom: 2rem">
@@ -142,7 +120,7 @@
   </div>
   <!-- End video -->
 
-  <!-- Banner body wash -->
+  <!-- Banner 2 -->
   <div id="carouselExampleIndicators " class="carousel slide" style="margin-bottom: 4rem">
     <div class="carousel-indicators"></div>
     <div class="carousel-inner">
@@ -151,7 +129,7 @@
       </div>
     </div>
   </div>
-  <!-- End Banner body wash -->
+  <!-- End Banner 2 -->
 
   <app-chatbot></app-chatbot>
 

@@ -21,13 +21,9 @@ import { ResumenComprasComponent } from './pages/resumen-compras/resumen-compras
 /* Componentes Categorias */
 import { RopaComponent } from './categorias/ropa/ropa.component';
 import { PisosComponent } from './categorias/pisos/pisos.component';
-import { BaniosComponent } from './categorias/banios/banios.component';
-import { CocinaComponent } from './categorias/cocina/cocina.component';
-import { VidriosYSuperficiesComponent } from './categorias/vidrios-y-superficies/vidrios-y-superficies.component';
-import { AlfombrasComponent } from './categorias/alfombras/alfombras.component';
-
-
-
+import { MirachemComponent } from './categorias/mirachem/mirachem.component';
+import { SuperficiesComponent } from './categorias/superficies/superficies.component';
+import { EspecialidadesComponent } from './categorias/especialidades/especialidades.component';
 
 const routes: Routes = [
     {path: 'inicio', component: InicioComponent},
@@ -38,13 +34,11 @@ const routes: Routes = [
     {path: 'resumen', component: ResumenComprasComponent},
 
     /* Rutas Categorias */
-    {path: 'Ropa', component: RopaComponent},
-    {path: 'Pisos', component: PisosComponent},
-    {path: 'Baños', component: BaniosComponent},
-    {path: 'Cocina', component: CocinaComponent},
-    {path: 'Vidrios_y_Superficies', component: VidriosYSuperficiesComponent},
-    {path: 'Alfombras', component: AlfombrasComponent},
-
+    {path: 'ropa', component: RopaComponent},
+    {path: 'pisos', component: PisosComponent},
+    {path: 'superficies', component: SuperficiesComponent},
+    {path: 'especialidades', component: EspecialidadesComponent},
+    {path: 'mirachem', component: MirachemComponent},
     {path: 'bolsa-trabajo', component: BolsaTrabajoComponent},
 
     /* Crud */
@@ -54,7 +48,6 @@ const routes: Routes = [
 
     /* Admin */
     {path: 'admin', component: AdminInicioComponent},
-
     {path: 'nosotros', component: NosotrosComponent},
     {path: 'sucursales', component: SucursalesComponent},
     {path: 'contactanos', component: ContactanosComponent},

@@ -3,6 +3,7 @@ export interface pruebaMysql {
     nombre_producto?: string | undefined;
     clave_producto?: string ;
     categoria?: string | undefined ;
+    portada_categoria?: string | undefined ;
     descripcion?: string ;
     descripcion_corta?: string ;
     precio?: number ;
